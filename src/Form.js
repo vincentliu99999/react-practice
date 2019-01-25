@@ -4,18 +4,26 @@ class Form extends React.Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleTextareaChange = this.handleTextareaChange.bind(this);
     this.handleRadioChange = this.handleRadioChange.bind(this);
     this.handleSelectChange = this.handleSelectChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       inputValue: '',
       radioValue: '',
-      skills: []
+      skills: [],
+      essay: 'Please write an essay about your favorite DOM element.'
     };
   }
 
   handleInputChange(e) {
     this.setState({inputValue: e.target.value.toUpperCase()});
+    // this.setState({essay: e.target.value});
+  }
+
+  handleTextareaChange(e) {
+    // this.setState({inputValue: e.target.value.toUpperCase()});
+    this.setState({essay: e.target.value});
   }
 
   handleRadioChange(e) {
@@ -66,6 +74,12 @@ class Form extends React.Component {
             <option value="vuejs">vuejs</option>
             <option value="angular">angular</option>
           </select>
+        </p>
+        <p>
+          <label>
+          Essay:
+          <textarea value={this.state.essay} onChange={this.handleTextareaChange} />
+          </label>
         </p>
         <input type="submit" value="submit" />
       </form>
