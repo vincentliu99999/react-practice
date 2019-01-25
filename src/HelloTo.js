@@ -10,7 +10,8 @@ class HelloTo extends React.Component {
   }
 
   handleClick() {
-    this.setState({date: new Date()});
+    // this.setState({date: new Date()});
+    this.tick();
   }
 
   componentWillMount() {
@@ -52,9 +53,9 @@ class HelloTo extends React.Component {
   }
 
   tick() {
-    this.setState({
+    this.setState((state, props) => ({
       date: new Date()
-    });
+    }));
   }
 
   render() {
