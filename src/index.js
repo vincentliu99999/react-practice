@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import HelloTo from "./HelloTo";
-import AlarmClockControl from "./AlarmClockControl";
+import HelloTo from "./component/HelloTo";
+import AlarmClockControl from "./component/AlarmClockControl";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Form from "./Form";
-import EssayForm from "./EssayForm";
-import FlavorForm from "./FlavorForm";
-import CssStyle from "./CssStyle";
+import Form from "./component/Form";
+import EssayForm from "./component/EssayForm";
+import FlavorForm from "./component/FlavorForm";
+import CssStyle from "./component/CssStyle";
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
