@@ -4,7 +4,10 @@ class HelloTo extends React.Component {
   constructor(props) {
     console.dir(props);
     super(props);
+    console.log(this.props);
     console.log('constructor');
+    console.log('url:'+props.match.url);
+    console.log(this.props.location.state);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
         date: new Date(),
