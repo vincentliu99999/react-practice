@@ -9,8 +9,8 @@ function HelloGroup() {
     return (
       <div>
         <HelloTo name="Vincent" gender="Mr." />
-        <HelloTo name="Sunny" gender="Miss." />
-        <HelloTo name="Jack" gender="Mr." />
+        {/* <HelloTo name="Sunny" gender="Miss." />
+        <HelloTo name="Jack" gender="Mr." /> */}
       </div>
     );
   }
