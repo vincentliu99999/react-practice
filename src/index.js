@@ -5,7 +5,17 @@ import App from './App';
 import HelloTo from './HelloTo'
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<HelloTo name="Vincent" gender="Mr." />, document.getElementById('root'));
+function HelloGroup() {
+    return (
+      <div>
+        <HelloTo name="Vincent" gender="Mr." />
+        <HelloTo name="Sunny" gender="Miss." />
+        <HelloTo name="Jack" gender="Mr." />
+      </div>
+    );
+  }
+
+ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
