@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Form from "./Form";
 import EssayForm from "./EssayForm";
 import FlavorForm from "./FlavorForm";
+import CssStyle from "./CssStyle";
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -56,6 +57,7 @@ ReactDOM.render(
           <li><Link to="/form">Form</Link></li>
           <li><Link to="/essayform">EssayForm</Link></li>
           <li><Link to="/flavorform">FlavorForm</Link></li>
+          <li><Link to="/cssStyle">CssStyle</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -64,6 +66,7 @@ ReactDOM.render(
         <Route path="/form" component={Form}/>
         <Route path="/essayform" component={EssayForm}/>
         <Route path="/flavorform" component={FlavorForm}/>
+        <Route path="/cssStyle" component={CssStyle}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,

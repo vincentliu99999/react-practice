@@ -1,0 +1,9 @@
+.CssStyleBox {
+    margin: 40px;
+    border: 5px solid red;
+}
+
+.CssStyleBox_content {
+    font-size: 15px;
+    text-align: center;
+}
