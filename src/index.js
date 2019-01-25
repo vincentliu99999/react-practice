@@ -19,6 +19,18 @@ const About = () => (
   </div>
 );
 
+function NumberList(props) {
+    const numbers = props.numbers;
+    const listItems = numbers.map((number) =>
+      <li>{number}</li>
+    );
+    return (
+      <ul>{listItems}</ul>
+    );
+  }
+
+  const numbers = [1, 2, 3, 4, 5];
+
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 // ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
@@ -41,6 +53,7 @@ ReactDOM.render(
         <Route path="/repos" component={Repos}/>
         <Route path="/about" component={About}/>
         <Route path="/hello" render={props =><HelloTo name="joe" gender="MR." {...props} />} />
+        <NumberList numbers={numbers} />
       </div>
     </Router>,
     document.getElementById('root'));
