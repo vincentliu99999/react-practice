@@ -6,6 +6,7 @@ import HelloTo from "./HelloTo";
 import AlarmClockControl from "./AlarmClockControl";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Form from "./Form";
+import EssayForm from "./EssayForm";
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -52,12 +53,14 @@ ReactDOM.render(
             }}>Welcome</Link>
           </li>
           <li><Link to="/form">Form</Link></li>
+          <li><Link to="/essayform">EssayForm</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
         <Route path="/about" component={About}/>
         <Route path="/hello" render={props =><HelloTo name="joe" gender="MR." {...props} />} />
         <Route path="/form" component={Form}/>
+        <Route path="/essayform" component={EssayForm}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
