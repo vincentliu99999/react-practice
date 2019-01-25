@@ -7,6 +7,7 @@ import AlarmClockControl from "./AlarmClockControl";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Form from "./Form";
 import EssayForm from "./EssayForm";
+import FlavorForm from "./FlavorForm";
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -54,6 +55,7 @@ ReactDOM.render(
           </li>
           <li><Link to="/form">Form</Link></li>
           <li><Link to="/essayform">EssayForm</Link></li>
+          <li><Link to="/flavorform">FlavorForm</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -61,6 +63,7 @@ ReactDOM.render(
         <Route path="/hello" render={props =><HelloTo name="joe" gender="MR." {...props} />} />
         <Route path="/form" component={Form}/>
         <Route path="/essayform" component={EssayForm}/>
+        <Route path="/flavorform" component={FlavorForm}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
