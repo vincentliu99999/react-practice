@@ -1,23 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import HelloTo from './HelloTo'
-import AlarmClockControl from './AlarmClockControl';
-import * as serviceWorker from './serviceWorker';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import HelloTo from "./HelloTo";
+import AlarmClockControl from "./AlarmClockControl";
+import * as serviceWorker from "./serviceWorker";
 
 function HelloGroup() {
-    return (
-      <div>
-        <HelloTo name="Vincent" gender="Mr." />
-        {/* <HelloTo name="Sunny" gender="Miss." />
+  return (
+    <div>
+      <HelloTo name="Vincent" gender="Mr." />
+      {/* <HelloTo name="Sunny" gender="Miss." />
         <HelloTo name="Jack" gender="Mr." /> */}
-      </div>
-    );
-  }
+    </div>
+  );
+}
 
+// ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
-ReactDOM.render(<AlarmClockControl />, document.getElementById('root'));
+ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
