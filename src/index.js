@@ -33,14 +33,14 @@ ReactDOM.render(
             <Link to={{
               pathname: '/hello',
               state: { id: '1', message: 'hello, component' }
-            }}>SayHi</Link>
+            }}>Welcome</Link>
           </li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
         <Route path="/repos" component={Repos}/>
         <Route path="/about" component={About}/>
-        <Route path="/hello" render={props =><HelloTo name="joe" {...props} />} />
+        <Route path="/hello" render={props =><HelloTo name="joe" gender="MR." {...props} />} />
       </div>
     </Router>,
     document.getElementById('root'));

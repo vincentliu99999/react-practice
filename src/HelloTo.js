@@ -2,7 +2,7 @@ import React from "react";
 
 class HelloTo extends React.Component {
   constructor(props) {
-    console.dir('props', props);
+    console.dir(props);
     super(props);
     console.log('constructor');
     this.handleClick = this.handleClick.bind(this);
