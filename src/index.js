@@ -13,6 +13,7 @@ import BootstrapBtn from "./component/BootstrapBtn";
 import PropType from './component/PropType';
 import ErrorBoundary from './component/ErrorBoundary';
 import ErrorCounter from './component/ErrorCounter';
+import StateDiff from './component/StateDiff';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -77,6 +78,7 @@ ReactDOM.render(
           <li><Link to="/bootstrap">BootstrapBtn</Link></li>
           <li><Link to="/propType">PropType</Link></li>
           <li><Link to="/error">Error Boundaries</Link></li>
+          <li><Link to="/stateDiff">StateDiff</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -88,6 +90,7 @@ ReactDOM.render(
         <Route path="/bootstrap" component={BootstrapBtn}/>
         <Route path="/propType" render={props=><PropType name={12345} age={"23"} gender="superman" />} />
         <Route path="/error" component={Error}/>
+        <Route path="/stateDiff" component={StateDiff}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
