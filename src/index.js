@@ -16,6 +16,7 @@ import ErrorCounter from './component/ErrorCounter';
 import StateDiff from './component/StateDiff';
 import Fetch from './component/Fetch';
 import Axios from './component/Axios';
+import Calculator from './component/state/Calculator';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -92,6 +93,7 @@ ReactDOM.render(
           <li><Link to="/error">Error Boundaries</Link></li>
           <li><Link to="/stateDiff">StateDiff</Link></li>
           <li><Link to="/AjaxEx">AjaxEx</Link></li>
+          <li><Link to="/Calculator">Calculator</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -107,6 +109,7 @@ ReactDOM.render(
         <Route path="/error" component={Error}/>
         <Route path="/stateDiff" component={StateDiff}/>
         <Route path="/AjaxEx" component={AjaxEx}/>
+        <Route path="/Calculator" component={Calculator}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
