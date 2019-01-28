@@ -24,7 +24,7 @@ class StateDiff extends React.Component {
   }
 
   render() {
-    return <h1 onClick={this.handleClick}>{this.state.counter}</h1>;
+    return <h1 onClick={this.handleClick}>Checkout Console: {this.state.counter}</h1>;
   }
 }
 

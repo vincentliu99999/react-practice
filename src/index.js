@@ -14,6 +14,8 @@ import PropType from './component/PropType';
 import ErrorBoundary from './component/ErrorBoundary';
 import ErrorCounter from './component/ErrorCounter';
 import StateDiff from './component/StateDiff';
+import Fetch from './component/Fetch';
+import Axios from './component/Axios';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -56,6 +58,15 @@ function ListItem(props) {
     </div>
   )
 
+  const AjaxEx = () => (
+    <div>
+      <h1>Fetch</h1>
+      <Fetch />
+      <h1>Axios</h1>
+      <Axios />
+    </div>
+  )
+
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 // ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
@@ -74,11 +85,13 @@ ReactDOM.render(
           <li><Link to="/form">Form</Link></li>
           <li><Link to="/essayform">EssayForm</Link></li>
           <li><Link to="/flavorform">FlavorForm</Link></li>
+          <li><Link to="/alarmClockControl">AlarmClockControl</Link></li>
           <li><Link to="/cssStyle">CssStyle</Link></li>
           <li><Link to="/bootstrap">BootstrapBtn</Link></li>
           <li><Link to="/propType">PropType</Link></li>
           <li><Link to="/error">Error Boundaries</Link></li>
           <li><Link to="/stateDiff">StateDiff</Link></li>
+          <li><Link to="/AjaxEx">AjaxEx</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -87,10 +100,13 @@ ReactDOM.render(
         <Route path="/form" component={Form}/>
         <Route path="/essayform" component={EssayForm}/>
         <Route path="/flavorform" component={FlavorForm}/>
+        <Route path="/alarmClockControl" component={AlarmClockControl}/>
+        <Route path="/cssStyle" component={CssStyle}/>
         <Route path="/bootstrap" component={BootstrapBtn}/>
         <Route path="/propType" render={props=><PropType name={12345} age={"23"} gender="superman" />} />
         <Route path="/error" component={Error}/>
         <Route path="/stateDiff" component={StateDiff}/>
+        <Route path="/AjaxEx" component={AjaxEx}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
