@@ -26,11 +26,12 @@ function tryConvert(temperature, convert) {
 class TemperatureInput extends React.Component {
   constructor(props) {
     super(props);
+    console.dir(props);
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(e) {
-    this.props.onTemperatureChange(e.target.value);
+    this.props.onTemperatureChange(e.target.value); // provided by parent component
   }
 
   render() {
@@ -46,7 +47,7 @@ class TemperatureInput extends React.Component {
 }
 
 function BoilingVerdict(props) {
-  console.log(props);
+  console.log(props.celsius);
   if (props.celsius >= 100) {
     return <p>水滾囉.</p>;
   }

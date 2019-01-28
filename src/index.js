@@ -17,6 +17,7 @@ import StateDiff from './component/StateDiff';
 import Fetch from './component/Fetch';
 import Axios from './component/Axios';
 import Calculator from './component/state/Calculator';
+import FilterableProductTable from './component/FilterableProductTable';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -68,6 +69,35 @@ function ListItem(props) {
     </div>
   )
 
+  function FancyBorder(props) {
+    return (
+      <div className={'FancyBorder FancyBorder-' + props.color}>
+        {props.children}
+      </div>
+    );
+  }
+  
+  function WelcomeDialog() {
+    return (
+      <FancyBorder color="blue">
+        <h1 className="Dialog-title">
+          Welcome
+        </h1>
+        <p className="Dialog-message">
+          Thank you for visiting our spacecraft!
+        </p>
+      </FancyBorder>
+    );
+  }
+
+const PRODUCTS = [
+  {category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'},
+  {category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball'},
+  {category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball'},
+  {category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch'},
+  {category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5'},
+  {category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7'}
+];
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 // ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
@@ -94,6 +124,8 @@ ReactDOM.render(
           <li><Link to="/stateDiff">StateDiff</Link></li>
           <li><Link to="/AjaxEx">AjaxEx</Link></li>
           <li><Link to="/Calculator">Calculator</Link></li>
+          <li><Link to="/WelcomeDialog">WelcomeDialog</Link></li>
+          <li><Link to="/FilterableProductTable">FilterableProductTable</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -110,6 +142,11 @@ ReactDOM.render(
         <Route path="/stateDiff" component={StateDiff}/>
         <Route path="/AjaxEx" component={AjaxEx}/>
         <Route path="/Calculator" component={Calculator}/>
+        <Route path="/WelcomeDialog" component={WelcomeDialog}/>
+        <Route
+            path="/FilterableProductTable"
+            render={props => <FilterableProductTable products={PRODUCTS} {...props} />}
+        />
         <NumberList numbers={numbers} />
       </div>
     </Router>,
