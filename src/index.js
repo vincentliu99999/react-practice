@@ -11,6 +11,8 @@ import FlavorForm from "./component/FlavorForm";
 import CssStyle from "./component/CssStyle";
 import BootstrapBtn from "./component/BootstrapBtn";
 import PropType from './component/PropType';
+import ErrorBoundary from './component/ErrorBoundary';
+import ErrorCounter from './component/ErrorCounter';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -41,6 +43,18 @@ function ListItem(props) {
   
   const numbers = [1, 2, 3, 4, 5];
 
+
+  const Error = () => (
+    <div>
+      <ErrorBoundary>
+        <ErrorCounter />
+      </ErrorBoundary>
+      <ErrorBoundary>
+        <ErrorCounter action={"handleClick"} />
+      </ErrorBoundary>
+    </div>
+  )
+
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 // ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
@@ -61,7 +75,8 @@ ReactDOM.render(
           <li><Link to="/flavorform">FlavorForm</Link></li>
           <li><Link to="/cssStyle">CssStyle</Link></li>
           <li><Link to="/bootstrap">BootstrapBtn</Link></li>
-          <li><Link to="/propType">propType</Link></li>
+          <li><Link to="/propType">PropType</Link></li>
+          <li><Link to="/error">Error Boundaries</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -72,6 +87,7 @@ ReactDOM.render(
         <Route path="/flavorform" component={FlavorForm}/>
         <Route path="/bootstrap" component={BootstrapBtn}/>
         <Route path="/propType" render={props=><PropType name={12345} age={"23"} gender="superman" />} />
+        <Route path="/error" component={Error}/>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
