@@ -10,6 +10,7 @@ import EssayForm from "./component/EssayForm";
 import FlavorForm from "./component/FlavorForm";
 import CssStyle from "./component/CssStyle";
 import BootstrapBtn from "./component/BootstrapBtn";
+import PropType from './component/PropType';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -60,6 +61,7 @@ ReactDOM.render(
           <li><Link to="/flavorform">FlavorForm</Link></li>
           <li><Link to="/cssStyle">CssStyle</Link></li>
           <li><Link to="/bootstrap">BootstrapBtn</Link></li>
+          <li><Link to="/propType">propType</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -69,6 +71,7 @@ ReactDOM.render(
         <Route path="/essayform" component={EssayForm}/>
         <Route path="/flavorform" component={FlavorForm}/>
         <Route path="/bootstrap" component={BootstrapBtn}/>
+        <Route path="/propType" render={props=><PropType name={12345} age={"23"} gender="superman" />} />
         <NumberList numbers={numbers} />
       </div>
     </Router>,
