@@ -12,7 +12,7 @@ class ProductCategoryRow extends React.Component {
       );
     }
   }
-  
+
   class ProductRow extends React.Component {
     render() {
       const product = this.props.product;
@@ -21,7 +21,7 @@ class ProductCategoryRow extends React.Component {
         <span style={{color: 'red'}}>
           {product.name}
         </span>;
-  
+
       return (
         <tr>
           <td>{name}</td>
@@ -30,15 +30,15 @@ class ProductCategoryRow extends React.Component {
       );
     }
   }
-  
+
   class ProductTable extends React.Component {
     render() {
       const filterText = this.props.filterText;
       const inStockOnly = this.props.inStockOnly;
-  
+
       const rows = [];
       let lastCategory = null;
-  
+
       this.props.products.forEach((product) => {
         if (product.name.indexOf(filterText) === -1) {
           return;
@@ -61,7 +61,7 @@ class ProductCategoryRow extends React.Component {
         );
         lastCategory = product.category;
       });
-  
+
       return (
         <table>
           <thead>
@@ -75,22 +75,22 @@ class ProductCategoryRow extends React.Component {
       );
     }
   }
-  
+
   class SearchBar extends React.Component {
     constructor(props) {
       super(props);
       this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
       this.handleInStockChange = this.handleInStockChange.bind(this);
     }
-    
+
     handleFilterTextChange(e) {
       this.props.onFilterTextChange(e.target.value);
     }
-    
+
     handleInStockChange(e) {
       this.props.onInStockChange(e.target.checked);
     }
-    
+
     render() {
       return (
         <form>
@@ -113,7 +113,7 @@ class ProductCategoryRow extends React.Component {
       );
     }
   }
-  
+
   class FilterableProductTable extends React.Component {
     constructor(props) {
       super(props);
@@ -121,23 +121,23 @@ class ProductCategoryRow extends React.Component {
         filterText: '',
         inStockOnly: false
       };
-      
+
       this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
       this.handleInStockChange = this.handleInStockChange.bind(this);
     }
-  
+
     handleFilterTextChange(filterText) {
       this.setState({
         filterText: filterText
       });
     }
-    
+
     handleInStockChange(inStockOnly) {
       this.setState({
         inStockOnly: inStockOnly
       })
     }
-  
+
     render() {
       return (
         <div>

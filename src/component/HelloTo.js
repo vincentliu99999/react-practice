@@ -69,7 +69,7 @@ class HelloTo extends React.Component {
 
   render() {
     console.log('render');
-    
+
     return (
       <div>
       <h2>Hello, {this.props.gender} {this.props.name}</h2>

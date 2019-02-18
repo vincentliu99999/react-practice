@@ -30,14 +30,14 @@ function ListItem(props) {
     // Correct! There is no need to specify the key here:
     return <li>{props.value}</li>;
   }
-  
+
   function NumberList(props) {
     const numbers = props.numbers;
     const listItems = numbers.map((number) =>
       // Correct! Key should be specified inside the array.
       <ListItem key={number.toString()}
                 value={number} />
-  
+
     );
     return (
       <ul>
@@ -45,9 +45,8 @@ function ListItem(props) {
       </ul>
     );
   }
-  
-  const numbers = ['footer1', 'footer2', 'footer3'];
 
+  const numbers = ['footer1', 'footer2', 'footer3'];
 
   const Error = () => (
     <div>
@@ -76,17 +75,19 @@ function ListItem(props) {
       </div>
     );
   }
-  
+
   function WelcomeDialog() {
     return (
+      <div>
       <FancyBorder color="blue">
-        <h1 className="Dialog-title">
-          Welcome
-        </h1>
-        <p className="Dialog-message">
-          Thank you for visiting our spacecraft!
-        </p>
+          <h1 className="Dialog-title">Welcome, Vicnent</h1>
+          <p className="Dialog-message">Thank you for visiting our spacecraft!</p>
       </FancyBorder>
+      <FancyBorder color="blue">
+          <h1 className="Dialog-title">Welcome, Vicnent2</h1>
+          <p className="Dialog-message">Thank you for visiting our spacecraft!</p>
+      </FancyBorder>
+      </div>
     );
   }
 
