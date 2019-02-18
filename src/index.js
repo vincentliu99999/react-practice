@@ -46,7 +46,7 @@ function ListItem(props) {
     );
   }
   
-  const numbers = [1, 2, 3, 4, 5];
+  const numbers = ['footer1', 'footer2', 'footer3'];
 
 
   const Error = () => (
