@@ -2,7 +2,7 @@ import React from "react";
 
 class HelloTo extends React.Component {
   constructor(props) {
-    console.dir(props);
+    console.log(props);
     super(props);
     console.log(this.props);
     console.log('constructor');
@@ -32,7 +32,7 @@ class HelloTo extends React.Component {
     console.log('componentDidMount');
     this.timerID = setInterval(
         () => this.tick(),
-        5000
+        1000
       );
   }
 
