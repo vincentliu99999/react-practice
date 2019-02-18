@@ -42,7 +42,7 @@ class Form extends React.Component {
       <form onSubmit={this.handleSubmit} >
         <p>
           <label>
-            name:
+            name(自動大寫):
             <input type="text" value={inputValue} onChange={this.handleInputChange}/>
           </label>
         </p>
