@@ -18,6 +18,7 @@ import Fetch from './component/Fetch';
 import Axios from './component/Axios';
 import Calculator from './component/state/Calculator';
 import FilterableProductTable from './component/FilterableProductTable';
+import AccordionEx from './component/sanfona/AccordionEx';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -127,6 +128,7 @@ ReactDOM.render(
           <li><Link to="/Calculator">Calculator</Link></li>
           <li><Link to="/WelcomeDialog">WelcomeDialog</Link></li>
           <li><Link to="/FilterableProductTable">FilterableProductTable</Link></li>
+          <li><Link to="/AccordionEx">AccordionEx</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -144,10 +146,12 @@ ReactDOM.render(
         <Route path="/AjaxEx" component={AjaxEx}/>
         <Route path="/Calculator" component={Calculator}/>
         <Route path="/WelcomeDialog" component={WelcomeDialog}/>
+        <Route path="/AccordionEx" component={AccordionEx}/>
         <Route
             path="/FilterableProductTable"
             render={props => <FilterableProductTable products={PRODUCTS} {...props} />}
         />
+        <hr></hr>
         <NumberList numbers={numbers} />
       </div>
     </Router>,
