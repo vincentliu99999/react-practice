@@ -1,5 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+// import { Values } from "redux-form-website-template";
+import store from "./component/ReduxForm/store";
+import showResults from "./component/ReduxForm/showResults";
+import SimpleForm from "./component/ReduxForm/SimpleForm";
+import FieldLevelValidationForm from "./component/ReduxForm/FieldLevelValidationForm";
 import "./index.css";
 import App from "./App";
 import HelloTo from "./component/HelloTo";
@@ -104,6 +110,12 @@ const PRODUCTS = [
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 // ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
 ReactDOM.render(
+  <Provider store={store}>
+    {/* <div style={{ padding: 15 }}>
+      <h2>Simple Form</h2>
+      <SimpleForm onSubmit={showResults} />
+    </div> */}
+    <FieldLevelValidationForm onSubmit={showResults} />
     <Router>
       <div>
         <ul>
@@ -154,7 +166,8 @@ ReactDOM.render(
         <hr></hr>
         <NumberList numbers={numbers} />
       </div>
-    </Router>,
+    </Router>
+    </Provider>,
     document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
