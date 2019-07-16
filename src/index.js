@@ -25,6 +25,7 @@ import Axios from './component/Axios';
 import Calculator from './component/state/Calculator';
 import FilterableProductTable from './component/FilterableProductTable';
 import AccordionEx from './component/sanfona/AccordionEx';
+import FormikBasic from './component/formik/Basic';
 import * as serviceWorker from "./serviceWorker";
 
 const About = () => (
@@ -141,6 +142,7 @@ ReactDOM.render(
           <li><Link to="/WelcomeDialog">WelcomeDialog</Link></li>
           <li><Link to="/FilterableProductTable">FilterableProductTable</Link></li>
           <li><Link to="/AccordionEx">AccordionEx</Link></li>
+          <li><Link to="/formik-basic">Formik Basic</Link></li>
         </ul>
         <hr/>
         <Route exact path="/" component={App}/>
@@ -163,6 +165,7 @@ ReactDOM.render(
             path="/FilterableProductTable"
             render={props => <FilterableProductTable products={PRODUCTS} {...props} />}
         />
+        <Route path="/formik-basic" component={FormikBasic}/>
         <hr></hr>
         <NumberList numbers={numbers} />
       </div>
