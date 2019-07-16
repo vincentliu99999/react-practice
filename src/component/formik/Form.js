@@ -59,18 +59,37 @@ class FormikForm extends Component {
   }
 
   render() {
+    const {
+      isCellphoneEmpty,
+    } = this.state;
     const initVal = {
       name: '',
       cellphone: ''
     };
 
-    const validateProfile = yup.object().shape({
-      name: yup.string()
-        .required('請填寫正確姓名'),
+    let validateProfile; 
+
+    console.log(`isCellphoneEmpty: ${isCellphoneEmpty}`);
+
+    let validateCellphone = yup.object().shape({
       cellphone: yup.string()
-        .required('請填寫正確行動電話')
-        .matches(/^[+]?[0-9]{10,15}$/, { message: '請填寫正確行動電話' }),
+      .required('請填寫正確行動電話')
+      .matches(/^[+]?[0-9]{10,15}$/, { message: '請填寫正確行動電話' }),
     });
+
+    let validateName = yup.object().shape({
+      name: yup.string()
+      .required('請填寫正確姓名'),
+    });
+
+    if(!isCellphoneEmpty) {
+      validateProfile = validateCellphone.concat(validateName);
+    } else {
+      validateProfile = validateCellphone;
+    }
+
+    console.log(validateProfile);
+    
 
     return (
       <div>
