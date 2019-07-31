@@ -111,13 +111,20 @@ const PRODUCTS = [
 // ReactDOM.render(<App />, document.getElementById('root'));
 // ReactDOM.render(<HelloGroup />, document.getElementById('root'));
 // ReactDOM.render(<AlarmClockControl />, document.getElementById("root"));
+
+const initial = {
+  address: 'address',
+  identity: 'identity',
+  invoice: 'invoice',
+  email: 'email',
+}
 ReactDOM.render(
   <Provider store={store}>
     {/* <div style={{ padding: 15 }}>
       <h2>Simple Form</h2>
       <SimpleForm onSubmit={showResults} />
     </div> */}
-    <FieldLevelValidationForm onSubmit={showResults} />
+    <FieldLevelValidationForm onSubmit={showResults} initialValues={initial} />
     <Router>
       <div>
         <ul>
