@@ -128,54 +128,54 @@ ReactDOM.render(
     <Router>
       <div>
         <ul>
-          <li><Link to="/">App</Link></li>
-          <li><Link to="/about">About</Link></li>
+          <li><Link to="/react-practice/">App</Link></li>
+          <li><Link to="/react-practice/about">About</Link></li>
           <li>
             <Link to={{
-                pathname: '/hello',
+                pathname: '/react-practice/hello',
                 state: { id: '1', message: 'hello, component' }
             }}>Welcome</Link>
           </li>
-          <li><Link to="/form">Form</Link></li>
-          <li><Link to="/essayform">EssayForm</Link></li>
-          <li><Link to="/flavorform">FlavorForm</Link></li>
-          <li><Link to="/alarmClockControl">AlarmClockControl</Link></li>
-          <li><Link to="/cssStyle">CssStyle</Link></li>
-          <li><Link to="/bootstrap">BootstrapBtn</Link></li>
-          <li><Link to="/propType">PropType</Link></li>
-          <li><Link to="/error">Error Boundaries</Link></li>
-          <li><Link to="/stateDiff">StateDiff</Link></li>
-          <li><Link to="/AjaxEx">AjaxEx</Link></li>
-          <li><Link to="/Calculator">Calculator</Link></li>
-          <li><Link to="/WelcomeDialog">WelcomeDialog</Link></li>
-          <li><Link to="/FilterableProductTable">FilterableProductTable</Link></li>
-          <li><Link to="/AccordionEx">AccordionEx</Link></li>
-          <li><Link to="/formik-basic">Formik Basic</Link></li>
-          <li><Link to="/formik-form">Formik From</Link></li>
+          <li><Link to="/react-practice/form">Form</Link></li>
+          <li><Link to="/react-practice/essayform">EssayForm</Link></li>
+          <li><Link to="/react-practice/flavorform">FlavorForm</Link></li>
+          <li><Link to="/react-practice/alarmClockControl">AlarmClockControl</Link></li>
+          <li><Link to="/react-practice/cssStyle">CssStyle</Link></li>
+          <li><Link to="/react-practice/bootstrap">BootstrapBtn</Link></li>
+          <li><Link to="/react-practice/propType">PropType</Link></li>
+          <li><Link to="/react-practice/error">Error Boundaries</Link></li>
+          <li><Link to="/react-practice/stateDiff">StateDiff</Link></li>
+          <li><Link to="/react-practice/AjaxEx">AjaxEx</Link></li>
+          <li><Link to="/react-practice/Calculator">Calculator</Link></li>
+          <li><Link to="/react-practice/WelcomeDialog">WelcomeDialog</Link></li>
+          <li><Link to="/react-practice/FilterableProductTable">FilterableProductTable</Link></li>
+          <li><Link to="/react-practice/AccordionEx">AccordionEx</Link></li>
+          <li><Link to="/react-practice/formik-basic">Formik Basic</Link></li>
+          <li><Link to="/react-practice/formik-form">Formik From</Link></li>
         </ul>
         <hr/>
-        <Route exact path="/" component={App}/>
-        <Route path="/about" component={About}/>
-        <Route path="/hello" render={props =><HelloTo name="joe" gender="MR." {...props} />} />
-        <Route path="/form" component={Form}/>
-        <Route path="/essayform" component={EssayForm}/>
-        <Route path="/flavorform" component={FlavorForm}/>
-        <Route path="/alarmClockControl" component={AlarmClockControl}/>
-        <Route path="/cssStyle" component={CssStyle}/>
-        <Route path="/bootstrap" component={BootstrapBtn}/>
-        <Route path="/propType" render={props=><PropType name={12345} age={"23"} gender="superman" />} />
-        <Route path="/error" component={Error}/>
-        <Route path="/stateDiff" component={StateDiff}/>
-        <Route path="/AjaxEx" component={AjaxEx}/>
-        <Route path="/Calculator" component={Calculator}/>
-        <Route path="/WelcomeDialog" component={WelcomeDialog}/>
-        <Route path="/AccordionEx" component={AccordionEx}/>
+        <Route exact path="/react-practice/" component={App}/>
+        <Route path="/react-practice/about" component={About}/>
+        <Route path="/react-practice/hello" render={props =><HelloTo name="joe" gender="MR." {...props} />} />
+        <Route path="/react-practice/form" component={Form}/>
+        <Route path="/react-practice/essayform" component={EssayForm}/>
+        <Route path="/react-practice/flavorform" component={FlavorForm}/>
+        <Route path="/react-practice/alarmClockControl" component={AlarmClockControl}/>
+        <Route path="/react-practice/cssStyle" component={CssStyle}/>
+        <Route path="/react-practice/bootstrap" component={BootstrapBtn}/>
+        <Route path="/react-practice/propType" render={props=><PropType name={12345} age={"23"} gender="superman" />} />
+        <Route path="/react-practice/error" component={Error}/>
+        <Route path="/react-practice/stateDiff" component={StateDiff}/>
+        <Route path="/react-practice/AjaxEx" component={AjaxEx}/>
+        <Route path="/react-practice/Calculator" component={Calculator}/>
+        <Route path="/react-practice/WelcomeDialog" component={WelcomeDialog}/>
+        <Route path="/react-practice/AccordionEx" component={AccordionEx}/>
         <Route
-            path="/FilterableProductTable"
+            path="/react-practice/FilterableProductTable"
             render={props => <FilterableProductTable products={PRODUCTS} {...props} />}
         />
-        <Route path="/formik-basic" component={FormikBasic}/>
-        <Route path="/formik-form" component={FormikForm}/>
+        <Route path="/react-practice/formik-basic" component={FormikBasic}/>
+        <Route path="/react-practice/formik-form" component={FormikForm}/>
         <hr></hr>
         <NumberList numbers={numbers} />
       </div>
