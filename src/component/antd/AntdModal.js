@@ -37,7 +37,7 @@ class AntdModal extends Component {
     });
   };
 
-  handleCancel12= (e) => {
+  handleCancel2= (e) => {
     console.log(e);
     this.setState({
       visible2: false,
@@ -65,6 +65,14 @@ class AntdModal extends Component {
           visible={this.state.visible2}
           onOk={this.handleOk2}
           onCancel={this.handleCancel2}
+          footer={[
+            <Button key="back" onClick={this.handleCancel2}>
+              Close
+            </Button>,
+            <Button key="submit" type="primary" onClick={this.handleOk2}>
+              Submit
+            </Button>,
+          ]}
         >
           <p>Some contents...</p>
           <p>Some contents...</p>
