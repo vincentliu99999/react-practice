@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input} from 'antd';
+import { Input } from 'antd';
 import { Formik, Field, Form } from 'formik';
 import { Debug } from './Debug';
 
@@ -13,7 +13,7 @@ const FormikBasic = () => (
         email: '',
         invoice: '',
       }}
-      onSubmit={values => {
+      onSubmit={(values) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
         }, 500);
@@ -33,7 +33,7 @@ const FormikBasic = () => (
           <Field
             name="invoice"
             render={({ field }) => (
-              <Input id="invoice" {...field} placeholder="invoice"/>
+              <Input id="invoice" {...field} placeholder="invoice" />
             )}
           />
           <button type="submit">Submit</button>

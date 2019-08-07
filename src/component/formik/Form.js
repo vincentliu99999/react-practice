@@ -12,20 +12,20 @@ class FormikForm extends Component {
     };
   }
 
-  handleNameChange = e => {
+  handleNameChange = (e) => {
     console.log(e.target.value);
     const name = e.target.value;
     console.log(`handleNameChange: ${name}`);
   }
 
-  handleCellphoneChange = setFieldValue => e => {
+  handleCellphoneChange = setFieldValue => (e) => {
     const cellphone = e.target.value;
     console.log(`handleCellphoneChange: ${cellphone}`);
     setFieldValue('cellphone', cellphone);
 
     this.setState({
       isCellphoneEmpty: cellphone === '',
-    })
+    });
   }
 
   renderForm = (props) => {
@@ -44,14 +44,14 @@ class FormikForm extends Component {
       <form onSubmit={props.handleSubmit}>
         <label htmlFor="name">Name</label>
         <input type="text" name="name" onChange={this.handleNameChange} />
-          <ErrorMessage name="name">{msg => <span>{msg}</span>}</ErrorMessage>
-          <Field
-            name="cellphone"
-            render={({ field }) => (
-              <Input id="cellphone" {...field} placeholder="cellphone" onChange={this.handleCellphoneChange(setFieldValue)} />
-            )}
-          />
-          <ErrorMessage name="cellphone">{msg => <span>{msg}</span>}</ErrorMessage>
+        <ErrorMessage name="name">{msg => <span>{msg}</span>}</ErrorMessage>
+        <Field
+          name="cellphone"
+          render={({ field }) => (
+            <Input id="cellphone" {...field} placeholder="cellphone" onChange={this.handleCellphoneChange(setFieldValue)} />
+          )}
+        />
+        <ErrorMessage name="cellphone">{msg => <span>{msg}</span>}</ErrorMessage>
         <button type="submit">Submit</button>
         <Debug />
       </form>
@@ -67,35 +67,35 @@ class FormikForm extends Component {
       cellphone: ''
     };
 
-    let validateProfile; 
+    let validateProfile;
 
     console.log(`isCellphoneEmpty: ${isCellphoneEmpty}`);
 
     let validateCellphone = yup.object().shape({
       cellphone: yup.string()
-      .required('請填寫正確行動電話')
-      .matches(/^[+]?[0-9]{10,15}$/, { message: '請填寫正確行動電話' }),
+        .required('請填寫正確行動電話')
+        .matches(/^[+]?[0-9]{10,15}$/, { message: '請填寫正確行動電話' }),
     });
 
     let validateName = yup.object().shape({
       name: yup.string()
-      .required('請填寫正確姓名'),
+        .required('請填寫正確姓名'),
     });
 
-    if(!isCellphoneEmpty) {
+    if (!isCellphoneEmpty) {
       validateProfile = validateCellphone.concat(validateName);
     } else {
       validateProfile = validateCellphone;
     }
 
     console.log(validateProfile);
-    
+
 
     return (
       <div>
         <Formik
           initialValues={initVal}
-          onSubmit={values => {
+          onSubmit={(values) => {
             setTimeout(() => {
               alert(JSON.stringify(values, null, 2));
             }, 500);

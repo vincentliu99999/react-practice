@@ -1,12 +1,11 @@
-import React from 'react'
+import React from 'react';
 import Joi from '@hapi/joi';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
 import {
   RadioField, SelectField, TextField, CheckboxField
 } from 'redux-form-antd';
 import createValidator from './joi_redux_form.js';
 import {
-  // eslint-disable-next-line no-unused-vars
   sexSchema, addressSchema, identitySchema, invoiceSchema, emailSchema, cellphoneSchema, telAreaSchema, telSchema, roleTypeSchema, specSchema
 } from '../../util/joiSchema';
 import { sexs, roleTypes } from './options';
@@ -26,8 +25,10 @@ export const joiRule = Joi.object().keys({
   // spec: specSchema,
 }).or('identity', 'invoice');
 
-const FieldLevelValidationForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+const FieldLevelValidationForm = (props) => {
+  const {
+    handleSubmit, pristine, reset, submitting
+  } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div><Field name="sex" component={RadioField} options={sexs} /></div>
@@ -48,11 +49,11 @@ const FieldLevelValidationForm = props => {
         </button>
       </div>
     </form>
-  )
-}
+  );
+};
 
 export default reduxForm({
   form: 'fieldLevelValidation', // a unique identifier for this form
   enableReinitialize: true,
   validate: createValidator(joiRule),
-})(FieldLevelValidationForm)
+})(FieldLevelValidationForm);
