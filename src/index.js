@@ -194,8 +194,11 @@ ReactDOM.render(
         />
         <Route path="/react-practice/formik-basic" component={FormikBasic} />
         <Route path="/react-practice/formik-form" component={FormikForm} />
-        <Route path="/react-practice/antd-modal" component={AntdModal} />
-        <hr />
+        <Route
+          path="/react-practice/antd-modal"
+          // component={AntdModal}
+          render={props => <AntdModal something="something" {...props} />}
+        />
         <NumberList numbers={numbers} />
       </div>
     </Router>

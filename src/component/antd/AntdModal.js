@@ -59,6 +59,7 @@ class AntdModal extends Component {
           <p>Some contents...</p>
           <p>Some contents...</p>
           <p>Some contents...</p>
+          <p>{this.props.something} from props</p>
         </Modal>
         <Modal
           title="Basic Modal 2"
@@ -77,6 +78,7 @@ class AntdModal extends Component {
           <p>Some contents...</p>
           <p>Some contents...</p>
           <p>Some contents...</p>
+          <p>{this.props.something} from props</p>
         </Modal>
       </div>
     );
