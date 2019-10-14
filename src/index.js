@@ -12,6 +12,7 @@ import './index.css';
 import App from './App';
 import HelloTo from './component/HelloTo';
 import AlarmClockControl from './component/AlarmClockControl';
+import Toggle from './component/Toggle';
 import Form from './component/Form';
 import EssayForm from './component/EssayForm';
 import FlavorForm from './component/FlavorForm';
@@ -156,6 +157,7 @@ ReactDOM.render(
           <li><Link to="/react-practice/essayform">EssayForm</Link></li>
           <li><Link to="/react-practice/flavorform">FlavorForm</Link></li>
           <li><Link to="/react-practice/alarmClockControl">AlarmClockControl</Link></li>
+          <li><Link to="/react-practice/toggle">Toggle</Link></li>
           <li><Link to="/react-practice/cssStyle">CssStyle</Link></li>
           <li><Link to="/react-practice/bootstrap">BootstrapBtn</Link></li>
           <li><Link to="/react-practice/propType">PropType</Link></li>
@@ -178,6 +180,7 @@ ReactDOM.render(
         <Route path="/react-practice/essayform" component={EssayForm} />
         <Route path="/react-practice/flavorform" component={FlavorForm} />
         <Route path="/react-practice/alarmClockControl" component={AlarmClockControl} />
+        <Route path="/react-practice/toggle" component={Toggle} />
         <Route path="/react-practice/cssStyle" component={CssStyle} />
         <Route path="/react-practice/bootstrap" component={BootstrapBtn} />
         {/* eslint-disable-next-line no-unused-vars */}
