@@ -1,33 +1,66 @@
-import React, { Component } from "react";
-import { Button, ButtonToolbar } from "react-bootstrap";
+import React, { Component } from 'react';
+import { Button, ButtonToolbar } from 'react-bootstrap';
+
+// preventing rendering
+function HealthAlter(props) {
+  if (!props.isLightOn) {
+    return null;
+  }
+
+  return (
+    <Button bsStyle="danger"> 再不關燈就... </Button>
+  );
+}
 
 class BootstrapBtn extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isLightOn: false,
+    };
+  }
+
+  toggleLogin = () => {
+    this.setState(state => ({
+      isLightOn: !state.isLightOn
+    }));
+  }
+
   render() {
+    const isLightOn = this.state.isLightOn;
+    let lightButton;
+
+    if (isLightOn) {
+      lightButton = <Button bsStyle="primary" onClick={() => this.toggleLogin()}> 關燈 </Button>;
+    } else {
+      lightButton = <Button bsStyle="dark" onClick={() => this.toggleLogin()}> 開燈 </Button>;
+    }
     return (
-      <div class="panel panel-default">
-        <div class="panel-heading">
+      <div className="panel panel-default">
+        <div className="panel-heading">
           Circle Icon Buttons with Font Awesome Icons
         </div>
 
-        <div class="panel-body">
+        <div className="panel-body">
           <h4> Theme Circle Buttons </h4>
-          <button type="button" class="btn btn-default btn-circle">
-            <i class="fa fa-check" />
+          <button type="button" className="btn btn-default btn-circle">
+            <i className="fa fa-check" />
           </button>
-          <button type="button" class="btn btn-primary btn-circle">
-            <i class="fa fa-list" />
+          <button type="button" className="btn btn-primary btn-circle">
+            <i className="fa fa-list" />
           </button>
-          <button type="button" class="btn btn-success btn-circle">
-            <i class="fa fa-link" />
+          <button type="button" className="btn btn-success btn-circle">
+            <i className="fa fa-link" />
           </button>
-          <button type="button" class="btn btn-info btn-circle">
-            <i class="fa fa-check" />
+          <button type="button" className="btn btn-info btn-circle">
+            <i className="fa fa-check" />
           </button>
-          <button type="button" class="btn btn-warning btn-circle">
-            <i class="fa fa-times" />
+          <button type="button" className="btn btn-warning btn-circle">
+            <i className="fa fa-times" />
           </button>
-          <button type="button" class="btn btn-danger btn-circle">
-            <i class="fa fa-heart" />
+          <button type="button" className="btn btn-danger btn-circle">
+            <i className="fa fa-heart" />
           </button>
           <br />
           <br />
@@ -57,12 +90,21 @@ class BootstrapBtn extends Component {
           <h4> React Bootstrap Buttons </h4>
           <ButtonToolbar>
             <Button> Default </Button>
-            <Button bsStyle="primary"> Primary </Button>
+            <Button bsStyle="primary"> Primary </Button>;
             <Button bsStyle="success"> Success </Button>
             <Button bsStyle="info"> Info </Button>
             <Button bsStyle="warning"> Warning </Button>
             <Button bsStyle="danger"> Danger </Button>
             <Button bsStyle="link"> Link </Button>
+          </ButtonToolbar>
+          <ButtonToolbar>
+            { lightButton }
+            {/* inline condition */}
+            { isLightOn && <Button bsStyle="warning"> 提醒您，睡覺前請關燈 </Button> }
+            { isLightOn
+              ? <Button bsStyle="info"> 燈還開著 </Button>
+              : <Button bsStyle="dark"> 燈關了 </Button> }
+            <HealthAlter isLightOn={isLightOn} />
           </ButtonToolbar>
         </div>
       </div>
