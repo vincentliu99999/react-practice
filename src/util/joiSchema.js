@@ -127,13 +127,13 @@ export const telAreaSchema = Joi.when('tel', {
   console.log(errors[0]);
   return '請填寫正確區碼';
 })
-.label('區碼');
+  .label('區碼');
 
 export const telSchema = SCHEMA.BASIC.telFormatSchema.error((errors) => { // any.empty, string.min, string.max, string.regex.name
   console.log(errors[0]);
   return '請填寫正確電話號碼';
 })
-.label('電話號碼');
+  .label('電話號碼');
 
 export const roleTypeSchema = Joi.number().min(RANGE.ROLE_TYPE.FROM).max(RANGE.ROLE_TYPE.TO)
   .error((errors) => { // number.base, number.min, number.max

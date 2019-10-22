@@ -8,7 +8,7 @@ function ActionLink() {
   }
 
   return (
-    <a href="#" onClick={e => handleClick(e, 'id')}>
+    <a href="#top" onClick={e => handleClick(e, 'id')}>
       Click me
     </a>
   );

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-class StateDiff extends React.Component {
+class StateDiff extends Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0 };
@@ -12,15 +12,16 @@ class StateDiff extends React.Component {
       {
         counter: this.state.counter + 1
       },
-      function() {
-        console.log("handleClick_fn:" + this.state.counter);
+      // eslint-disable-next-line func-names
+      function () {
+        console.log('handleClick_fn:' + this.state.counter);
       }
     );
-    console.log("handleClick:" + this.state.counter);
+    console.log('handleClick:' + this.state.counter);
   }
 
   componentDidUpdate() {
-    console.log("componentDidUpdate:" + this.state.counter);
+    console.log('componentDidUpdate:' + this.state.counter);
   }
 
   render() {

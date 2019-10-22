@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 class AlarmClockControl extends React.Component {
   constructor(props) {
@@ -39,10 +39,12 @@ class AlarmClockControl extends React.Component {
   }
 }
 
+// eslint-disable-next-line no-unused-vars
 function Morning(props) {
   return <h1>Get up!</h1>;
 }
 
+// eslint-disable-next-line no-unused-vars
 function Night(props) {
   return <h1>Sleep zzz...</h1>;
 }
@@ -57,8 +59,8 @@ function Action(props) {
 
 function ClockAlarmButton(props) {
   return (
-    <button onClick={props.onClick}>
-      {props.ring === "on" ? "Open Alarm Clock" : "Close Alarm Clock"}
+    <button type="button" onClick={props.onClick}>
+      {props.ring === 'on' ? 'Open Alarm Clock' : 'Close Alarm Clock'}
     </button>
   );
 }

@@ -2,5 +2,6 @@
 
 export default (async function showResults(values) {
   // await sleep(500); // simulate server latency
+  // eslint-disable-next-line no-alert
   window.alert(`You submitted:\n\n${JSON.stringify(values)}`); // JSON.stringify(values, null, 2)
 });

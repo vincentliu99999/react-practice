@@ -2,27 +2,25 @@ import React, { Component } from 'react';
 import './CssStyleBox.css';
 import styled from 'styled-components';
 
-class CssStyle extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
+class CssStyle extends Component {
   render() {
-    return <div>
-      <CssStyleBox />
-      <InlineBox />
-      <StyledComponentBox />
-    </div>
+    return (
+      <div>
+        <CssStyleBox />
+        <InlineBox />
+        <StyledComponentBox />
+      </div>
+    );
   }
 }
-//css style
+// css style
 const CssStyleBox = () => (
   <div className="CssStyleBox">
     <p className="CssStyleBox_content">CSS style box</p>
   </div>
 );
 
-//inline style
+// inline style
 const divStyle = {
   margin: '40px',
   border: '5px solid green'
@@ -38,7 +36,7 @@ const InlineBox = () => (
   </div>
 );
 
-//styled-components
+// styled-components
 const Div = styled.div`
   margin: 40px;
   border: 5px double blue;

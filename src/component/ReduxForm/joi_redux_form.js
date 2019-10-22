@@ -39,7 +39,7 @@ export default function createValidator(schema) {
 //     }
 
 //     console.log(result.error);
-    
+
 
 //     const errors = result.error.details.reduce((all, cur) => {
 //       const allErrors = Object.assign({}, all);

@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
-import createValidator from './joi_redux_form.js';
 import { Field, reduxForm } from 'redux-form';
+import createValidator from './joi_redux_form.js';
+
 const Joi = require('joi');
 
 const schema = {
@@ -8,8 +10,10 @@ const schema = {
   lastName: Joi.string().required().valid('Liu'),
 };
 
-const SimpleForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props;
+const SimpleForm = (props) => {
+  const {
+    handleSubmit, pristine, reset, submitting
+  } = props;
   return (
     <form onSubmit={handleSubmit}>
       <div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Fetch extends React.Component {
+class Fetch extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,20 +11,19 @@ class Fetch extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://httpbin.org/get")
+    fetch('https://httpbin.org/get')
       .then(res => res.json())
       .then((result) => {
-          this.setState({
-            isLoaded: true,
-            rsobj: result
-          });
-        },(error) => {
-          this.setState({
-            isLoaded: true,
-            error: error
-          });
-        }
-      )
+        this.setState({
+          isLoaded: true,
+          rsobj: result
+        });
+      }, (error) => {
+        this.setState({
+          isLoaded: true,
+          error: error
+        });
+      });
   }
 
   render() {

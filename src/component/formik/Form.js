@@ -97,6 +97,7 @@ class FormikForm extends Component {
           initialValues={initVal}
           onSubmit={(values) => {
             setTimeout(() => {
+              // eslint-disable-next-line no-alert
               alert(JSON.stringify(values, null, 2));
             }, 500);
           }}

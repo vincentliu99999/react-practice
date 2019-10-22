@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import Joi from '@hapi/joi';
 import { Field, reduxForm } from 'redux-form';
@@ -39,7 +40,7 @@ const FieldLevelValidationForm = (props) => {
       <Field name="telArea" component={TextField} placeholder="電話區碼" />
       <Field name="tel" component={TextField} placeholder="請輸入電話" />
       <Field name="cellphone" component={TextField} placeholder="請輸入行動電話" />
-      <Field name="spec" id="spec" component={CheckboxField} value="true">已詳細閱讀並接受上述 <a href="#">保證金規範     </a></Field>
+      <Field name="spec" id="spec" component={CheckboxField} value="true">已詳細閱讀並接受上述 <a href="#top">保證金規範     </a></Field>
       <div>
         <button type="submit" disabled={submitting}>
           Submit

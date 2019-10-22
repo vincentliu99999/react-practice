@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ErrorCounter extends React.Component {
+class ErrorCounter extends Component {
   constructor(props) {
     super(props);
     this.state = { counter: 0, error: null };
@@ -8,13 +8,14 @@ class ErrorCounter extends React.Component {
   }
 
   handleClick() {
-    this.setState(({counter}) => ({
+    this.setState(({ counter }) => ({
       counter: counter + 1
     }),
-    function(){
-      console.log(this.state.counter)
+    // eslint-disable-next-line func-names
+    function () {
+      console.log(this.state.counter);
       try {
-        if(this.props.action === "handleClick" && this.state.counter === 3) {
+        if (this.props.action === 'handleClick' && this.state.counter === 3) {
           throw new Error('handleClick error!!');
         }
       } catch (error) {
@@ -26,7 +27,7 @@ class ErrorCounter extends React.Component {
   render() {
     if (this.state.counter === 5) {
       throw new Error('error!!');
-    } else if(this.state.error !== null) {
+    } else if (this.state.error !== null) {
       return <h1>{this.state.error}</h1>;
     }
     return <h1 onClick={this.handleClick}>{this.state.counter}</h1>;

@@ -35,6 +35,7 @@ import * as serviceWorker from './serviceWorker';
 const About = () => (
   <div>
     <h2>About</h2>
+    this is function component!
   </div>
 );
 
@@ -47,7 +48,7 @@ function NumberList(props) {
   const numbers = props.numbers;
   const listItems = numbers.map(number => (
     <ListItem
-      key={number.toString()}
+      key={number.toString()} // there will be warning in console if you don't specify key to list
       value={number}
     />
   ));
@@ -139,7 +140,6 @@ ReactDOM.render(
       <h2>Simple Form</h2>
       <SimpleForm onSubmit={showResults} />
     </div> */}
-    <FieldLevelValidationForm onSubmit={showResults} initialValues={initial} />
     <Router>
       <div>
         <ul>
@@ -170,6 +170,7 @@ ReactDOM.render(
           <li><Link to="/react-practice/AccordionEx">AccordionEx</Link></li>
           <li><Link to="/react-practice/formik-basic">Formik Basic</Link></li>
           <li><Link to="/react-practice/formik-form">Formik From</Link></li>
+          <li><Link to="/react-practice/redux-form">Redux Form</Link></li>
           <li><Link to="/react-practice/antd-modal">Antd Modal</Link></li>
         </ul>
         <hr />
@@ -197,6 +198,10 @@ ReactDOM.render(
         />
         <Route path="/react-practice/formik-basic" component={FormikBasic} />
         <Route path="/react-practice/formik-form" component={FormikForm} />
+        <Route
+          path="/react-practice/redux-form"
+          render={props => <FieldLevelValidationForm onSubmit={showResults} initialValues={initial} {...props} />}
+        />
         <Route
           path="/react-practice/antd-modal"
           // component={AntdModal}

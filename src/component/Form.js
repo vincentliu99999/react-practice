@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Form extends React.Component {
+class Form extends Component {
   constructor(props) {
     super(props);
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -16,19 +16,19 @@ class Form extends React.Component {
   }
 
   handleInputChange(e) {
-    this.setState({inputValue: e.target.value.toUpperCase()});
+    this.setState({ inputValue: e.target.value.toUpperCase() });
   }
 
   handleRadioChange(e) {
-    this.setState({radioValue: e.target.value});
+    this.setState({ radioValue: e.target.value });
   }
 
   handleSelectChange(e) {
-    const {options} = e.target;
+    const { options } = e.target;
     const skills = Object.keys(options)
-                    .filter(i => options[i].selected === true)
-                    .map(i => options[i].value);
-    this.setState({skills: skills});
+      .filter(i => options[i].selected === true)
+      .map(i => options[i].value);
+    this.setState({ skills: skills });
   }
 
   handleSubmit(e) {
@@ -37,27 +37,35 @@ class Form extends React.Component {
   }
 
   render() {
-    const {inputValue, radioValue, skills} = this.state;
+    const { inputValue, radioValue, skills } = this.state;
     return (
-      <form onSubmit={this.handleSubmit} >
+      <form onSubmit={this.handleSubmit}>
         <p>
           <label>
             name(自動大寫):
-            <input type="text" value={inputValue} onChange={this.handleInputChange}/>
+            <input type="text" value={inputValue} onChange={this.handleInputChange} />
           </label>
         </p>
         <p>
           gender
-          <br/>
+          <br />
           <label>
             male:
-            <input type="radio" value="male" checked={radioValue === 'male'}
-              onChange={this.handleRadioChange}/>
+            <input
+              type="radio"
+              value="male"
+              checked={radioValue === 'male'}
+              onChange={this.handleRadioChange}
+            />
           </label>
           <label>
             female:
-            <input type="radio" value="female" checked={radioValue === 'female'}
-              onChange={this.handleRadioChange}/>
+            <input
+              type="radio"
+              value="female"
+              checked={radioValue === 'female'}
+              onChange={this.handleRadioChange}
+            />
           </label>
         </p>
         <p>

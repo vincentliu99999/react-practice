@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class ErrorBoundary extends React.Component {
+class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null, errorInfo: null };
@@ -11,7 +11,7 @@ class ErrorBoundary extends React.Component {
     this.setState({
       error: error,
       errorInfo: errorInfo
-    })
+    });
     // You can also log error messages to an error reporting service here
   }
 

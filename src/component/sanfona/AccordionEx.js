@@ -1,16 +1,16 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { Accordion, AccordionItem } from 'react-sanfona';
 
 class AccordionEx extends Component {
-  onAccordionChange = obj => {
+  onAccordionChange = (obj) => {
     console.log(obj);
   }
 
-  onAccordionItemExpended = obj => {
+  onAccordionItemExpended = (obj) => {
     console.log(obj);
   }
 
-  onAccordionItemClosed = obj => {
+  onAccordionItemClosed = (obj) => {
     console.log(obj);
   }
 
@@ -19,14 +19,16 @@ class AccordionEx extends Component {
     return (
       <Accordion
         allowMultiple="true"
-        onChange={(obj) => this.onAccordionChange(obj)}>
-        {items.map(item => {
+        onChange={obj => this.onAccordionChange(obj)}
+      >
+        {items.map((item) => {
           return (
             <AccordionItem
               title={`Item ${item}`}
               expanded={item === 1}
-              onExpand={(obj) => this.onAccordionItemExpended(obj)}
-              onClose={(obj) => this.onAccordionItemClosed(obj)}>
+              onExpand={obj => this.onAccordionItemExpended(obj)}
+              onClose={obj => this.onAccordionItemClosed(obj)}
+            >
               <div>
                 {`Item ${item} content`}
               </div>

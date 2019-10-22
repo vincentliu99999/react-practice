@@ -1,17 +1,17 @@
-import React from "react";
+import React from 'react';
 
 class HelloTo extends React.Component {
   constructor(props) {
     console.log(props);
     super(props);
     console.log(this.props);
-    console.log('constructor');
-    console.log('url:'+props.match.url);
+    console.log('url:' + props.match.url);
     console.log(this.props.location.state);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-        date: new Date(),
-        isToggleOn: true};
+      date: new Date(),
+      isToggleOn: true
+    };
   }
 
   handleClick() {
@@ -19,8 +19,8 @@ class HelloTo extends React.Component {
     console.log('this is:', this);
     this.tick();
     this.setState(state => ({
-        isToggleOn: !state.isToggleOn
-      }));
+      isToggleOn: !state.isToggleOn
+    }));
   }
 
   componentWillMount() {
@@ -31,9 +31,9 @@ class HelloTo extends React.Component {
   componentDidMount() {
     console.log('componentDidMount');
     this.timerID = setInterval(
-        () => this.tick(),
-        1000
-      );
+      () => this.tick(),
+      1000
+    );
   }
 
   componentWillReceiveProps() {
@@ -62,7 +62,7 @@ class HelloTo extends React.Component {
   }
 
   tick() {
-    this.setState((state, props) => ({
+    this.state.isToggleOn && this.setState(() => ({
       date: new Date()
     }));
   }
@@ -72,11 +72,11 @@ class HelloTo extends React.Component {
 
     return (
       <div>
-      <h2>Hello, {this.props.gender} {this.props.name}</h2>
-      <h2 onClick={this.handleClick}>It is {this.state.date.toLocaleTimeString()}.</h2>
-      <button onClick={this.handleClick}>
-        {this.state.isToggleOn ? 'ON' : 'OFF'}
-      </button>
+        <h2>Hello, {this.props.gender} {this.props.name}</h2>
+        <h2 onClick={this.handleClick}>It is {this.state.date.toLocaleTimeString()}.</h2>
+        <button type="button" onClick={this.handleClick}>
+          {this.state.isToggleOn ? 'ON' : 'OFF'}
+        </button>
       </div>
     );
   }
