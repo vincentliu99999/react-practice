@@ -45,9 +45,11 @@ class ProductTable extends Component {
       if (product.name.indexOf(filterText) === -1) {
         return;
       }
+
       if (inStockOnly && !product.stocked) {
         return;
       }
+
       if (product.category !== lastCategory) {
         rows.push(
           <ProductCategoryRow
@@ -56,12 +58,14 @@ class ProductTable extends Component {
           />
         );
       }
+
       rows.push(
         <ProductRow
           product={product}
           key={product.name}
         />
       );
+
       lastCategory = product.category;
     });
 
@@ -110,56 +114,8 @@ class SearchBar extends React.Component {
             onChange={this.handleInStockChange}
           />
           {' '}
-            Only show products in stock
+          Only show products in stock
         </p>
-      </form>
-    );
-  }
-}
-
-class Reservation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isGoing: true,
-      numberOfGuests: 2
-    };
-
-    this.handleInputChange = this.handleInputChange.bind(this);
-  }
-
-  handleInputChange(event) {
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
-
-    this.setState({
-      [name]: value
-    });
-  }
-
-  render() {
-    return (
-      <form>
-        <label>
-          Is going:
-          <input
-            name="isGoing"
-            type="checkbox"
-            checked={this.state.isGoing}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <br />
-        <label>
-          Number of guests:
-          <input
-            name="numberOfGuests"
-            type="number"
-            value={this.state.numberOfGuests}
-            onChange={this.handleInputChange}
-          />
-        </label>
       </form>
     );
   }
