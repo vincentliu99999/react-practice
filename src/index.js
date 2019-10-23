@@ -104,7 +104,7 @@ function WelcomeDialog() {
   );
 }
 
-const PRODUCTS = [
+const products = [
   {
     category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football'
   },
@@ -194,7 +194,7 @@ ReactDOM.render(
         <Route path="/react-practice/AccordionEx" component={AccordionEx} />
         <Route
           path="/react-practice/FilterableProductTable"
-          render={props => <FilterableProductTable products={PRODUCTS} {...props} />}
+          render={props => <FilterableProductTable products={products} {...props} />}
         />
         <Route path="/react-practice/formik-basic" component={FormikBasic} />
         <Route path="/react-practice/formik-form" component={FormikForm} />
