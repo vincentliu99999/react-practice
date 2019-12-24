@@ -174,7 +174,7 @@ ReactDOM.render(
           <li><Link to="/react-practice/antd-modal">Antd Modal</Link></li>
         </ul>
         <hr />
-        <Route exact path="/react-practice/" component={App} />
+        <Route exact strict path="/react-practice/" component={App} />
         <Route path="/react-practice/about" component={About} />
         <Route path="/react-practice/hello" render={props => <HelloTo name="joe" gender="MR." {...props} />} />
         <Route path="/react-practice/form" component={Form} />
