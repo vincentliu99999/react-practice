@@ -36,9 +36,13 @@ class FormikForm extends Component {
     const {
       name,
       cellphone,
+      code,
     } = props.values;
 
+    const { no, text } = code;
+
     console.log(`renderForm - name: ${name} isNameEmpty: ${name === ''}, cellphon: ${cellphone}`);
+    console.log(`no: ${no}, text: ${text}`);
 
     return (
       <form onSubmit={props.handleSubmit}>
@@ -52,6 +56,13 @@ class FormikForm extends Component {
           )}
         />
         <ErrorMessage name="cellphone">{msg => <span>{msg}</span>}</ErrorMessage>
+
+        {/* To access nested objects or arrays, name can also accept lodash-like dot path like social.facebook or friends[0].firstName */}
+        {/* https://jaredpalmer.com/formik/docs/guides/arrays#nested-objects */}
+        <Field name="code.no" />
+        <ErrorMessage name="code.no">{msg => <span>{msg}</span>}</ErrorMessage>
+        <Field name="code.text" />
+        <ErrorMessage name="code.text">{msg => <span>{msg}</span>}</ErrorMessage>
         <button type="submit">Submit</button>
         <Debug />
       </form>
@@ -64,7 +75,11 @@ class FormikForm extends Component {
     } = this.state;
     const initVal = {
       name: '',
-      cellphone: ''
+      cellphone: '',
+      code: {
+        no: 123,
+        text: 'text'
+      }
     };
 
     let validateProfile;
@@ -87,6 +102,19 @@ class FormikForm extends Component {
     } else {
       validateProfile = validateCellphone;
     }
+
+    let validateCode = yup.object({
+      code: yup.object().shape({
+        no: yup.number()
+          .required('請選擇 no')
+          .typeError('請選擇 no'),
+        text: yup.string()
+          .required('請選擇text')
+          .typeError('請選擇text')
+      })
+    });
+
+    validateProfile = validateProfile.concat(validateCode);
 
     console.log(validateProfile);
 
