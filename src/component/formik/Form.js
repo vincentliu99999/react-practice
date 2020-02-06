@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
-import { Input } from 'antd';
+import { Input, Radio } from 'antd';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import { Debug } from './Debug';
+
+const location = [
+  {
+    label: '是',
+    value: 'yes'
+  },
+  {
+    label: '否',
+    value: 'no'
+  }
+];
 
 class FormikForm extends Component {
   constructor(props) {
@@ -59,8 +70,19 @@ class FormikForm extends Component {
 
         {/* To access nested objects or arrays, name can also accept lodash-like dot path like social.facebook or friends[0].firstName */}
         {/* https://jaredpalmer.com/formik/docs/guides/arrays#nested-objects */}
+        <div>
+          <Field
+            name="placeType"
+            render={({ field }) => (
+              <Radio.Group {...field} options={location} />
+            )}
+          />
+        </div>
+        <ErrorMessage name="placeType">{msg => <span>{msg}</span>}</ErrorMessage>
+
         <Field name="code.no" />
         <ErrorMessage name="code.no">{msg => <span>{msg}</span>}</ErrorMessage>
+
         <Field name="code.text" />
         <ErrorMessage name="code.text">{msg => <span>{msg}</span>}</ErrorMessage>
         <button type="submit">Submit</button>
@@ -103,14 +125,24 @@ class FormikForm extends Component {
       validateProfile = validateCellphone;
     }
 
+    let validatePlaceType = yup.object().shape({
+      placeType: yup.string()
+        .required('請填寫 PlaceType'),
+    });
+
+    validateProfile = validateProfile.concat(validatePlaceType);
+
     let validateCode = yup.object({
-      code: yup.object().shape({
-        no: yup.number()
-          .required('請選擇 no')
-          .typeError('請選擇 no'),
-        text: yup.string()
-          .required('請選擇text')
-          .typeError('請選擇text')
+      code: yup.object().when('placeType', {
+        is: 'yes',
+        then: yup.object({
+          no: yup.number()
+            .required('請選擇 no')
+            .typeError('請選擇 no'),
+          text: yup.string()
+            .required('請選擇text')
+            .typeError('請選擇text')
+        })
       })
     });
 
