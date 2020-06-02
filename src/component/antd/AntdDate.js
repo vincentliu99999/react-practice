@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import { DatePicker } from 'antd';
 import 'antd/dist/antd.css';
 
+import moment from 'moment';
+
 const { RangePicker } = DatePicker;
 
 class AntdDate extends Component {
@@ -15,7 +17,9 @@ class AntdDate extends Component {
     console.log('handleDateChange');
     console.log(`
 date: ${date}
-dateString: ${dateString}`);
+dateString: ${dateString}
+${moment().format('MMMM Do YYYY, h:mm:ss a')}
+${moment(date, 'YYYY-MM-DD hh:mm:ss').format('YYYY-MM-DD hh:mm:ss')}`);
   };
 
   handleRangeChange = (date, dateString) => {
@@ -29,6 +33,8 @@ dateString: ${dateString}`);
     return (
       <div>
         <DatePicker onChange={this.handleDateChange} />
+        <br />
+        <DatePicker onChange={this.handleDateChange} showTime />
         <br />
         <RangePicker onChange={this.handleRangeChange} />
         <p>{this.props.something} from props</p>
