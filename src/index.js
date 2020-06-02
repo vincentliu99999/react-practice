@@ -30,6 +30,7 @@ import AccordionEx from './component/sanfona/AccordionEx';
 import FormikBasic from './component/formik/Basic';
 import FormikForm from './component/formik/Form';
 import AntdModal from './component/antd/AntdModal';
+import AntdDate from './component/antd/AntdDate';
 import * as serviceWorker from './serviceWorker';
 
 const About = () => (
@@ -172,6 +173,7 @@ ReactDOM.render(
           <li><Link to="/react-practice/formik-form">Formik From</Link></li>
           <li><Link to="/react-practice/redux-form">Redux Form</Link></li>
           <li><Link to="/react-practice/antd-modal">Antd Modal</Link></li>
+          <li><Link to="/react-practice/antd-date">Antd Date</Link></li>
         </ul>
         <hr />
         <Route exact strict path="/react-practice/" component={App} />
@@ -206,6 +208,11 @@ ReactDOM.render(
           path="/react-practice/antd-modal"
           // component={AntdModal}
           render={props => <AntdModal something="something" {...props} />}
+        />
+        <Route
+          path="/react-practice/antd-date"
+          // component={AntdModal}
+          render={props => <AntdDate something="something" {...props} />}
         />
         <NumberList numbers={numbers} />
       </div>
