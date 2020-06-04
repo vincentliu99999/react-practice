@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Input, Radio } from 'antd';
+import { Input, Radio, DatePicker } from 'antd';
 import { Formik, Field, ErrorMessage } from 'formik';
+import moment from 'moment';
 import * as yup from 'yup';
 import { Debug } from './Debug';
 
@@ -42,7 +43,9 @@ class FormikForm extends Component {
   renderForm = (props) => {
     console.log(props);
     const {
-      setFieldValue
+      setFieldValue,
+      handleReset,
+      values,
     } = props;
     const {
       name,
@@ -78,6 +81,7 @@ class FormikForm extends Component {
             )}
           />
         </div>
+
         <ErrorMessage name="placeType">{msg => <span>{msg}</span>}</ErrorMessage>
 
         <Field name="code.no" />
@@ -85,6 +89,15 @@ class FormikForm extends Component {
 
         <Field name="code.text" />
         <ErrorMessage name="code.text">{msg => <span>{msg}</span>}</ErrorMessage>
+
+        <DatePicker
+          name="date"
+          onChange={(date, dateString) => setFieldValue('date', dateString)
+      }
+          value={values.date !== '' ? moment(values.date) : null}
+        />
+
+        <button type="button" onClick={handleReset}>reset</button>
         <button type="submit">Submit</button>
         <Debug />
       </form>
@@ -101,7 +114,8 @@ class FormikForm extends Component {
       code: {
         no: 123,
         text: 'text'
-      }
+      },
+      date: moment(),
     };
 
     let validateProfile;
