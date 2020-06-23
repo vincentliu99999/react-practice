@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+/**
+ * @component APP Component
+ */
 class App extends Component {
+  /**
+   * render
+   */
   render() {
     return (
       <div className="App">

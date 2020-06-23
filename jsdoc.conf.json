@@ -6,7 +6,7 @@
   "source": {
       "include": ["src"],
       "includePattern": ".+\\.js(doc|x)?$",
-      "excludePattern": "(^|\\/|\\\\)_"
+      "excludePattern": "(node_modules/|docs)"
   },
   "plugins": [
       "plugins/markdown",
@@ -14,12 +14,13 @@
   ],
    "templates": {
     "better-docs": {
-        "name": "My React components"
+        "name": "My React Practice components"
       }
   },
   "opts": {
       "destination": "docs",
       "recurse": true,
+      "verbose": true,
       "readme": "README.md"
   }
 }

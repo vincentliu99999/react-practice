@@ -12,6 +12,9 @@ function HealthAlter(props) {
   );
 }
 
+/**
+ * BootstrapBtn Component
+ */
 class BootstrapBtn extends Component {
   constructor(props) {
     super(props);

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './CssStyleBox.css';
 import styled from 'styled-components';
 
+/**
+ * CssStyle Component
+ */
 class CssStyle extends Component {
   render() {
     return (

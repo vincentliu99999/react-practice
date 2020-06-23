@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
 
+/**
+ * @namespace
+ * ErrorBoundary Component
+ */
 class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
     this.state = { error: null, errorInfo: null };
   }
 
+  /**
+   * catch me
+   * @param {Object} error
+   * @param {Objecy} errorInfo
+   */
   componentDidCatch(error, errorInfo) {
     // Catch errors in any components below and re-render with error message
     this.setState({

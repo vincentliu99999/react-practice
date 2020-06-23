@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * AlarmClockControl Component
+ */
 class AlarmClockControl extends React.Component {
   constructor(props) {
     super(props);

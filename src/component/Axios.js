@@ -2,6 +2,9 @@
 import React, { Component } from 'react';
 import { Get, Head } from 'react-axios';
 
+/**
+ * Axios Component
+ */
 class Axios extends Component {
   render() {
     return (
