@@ -14,14 +14,14 @@ module.exports = {
       "airbnb",
       "plugin:react/recommended"
     ], // 使用 eslint-config-airbnb
-    "parser": "babel-eslint", // 增强语法识别能力
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "jsx": true
-        }
-    },
+    // "parser": "babel-eslint", // 增强语法识别能力
+    // "parserOptions": {
+    //     "ecmaVersion": 6,
+    //     "sourceType": "module",
+    //     "ecmaFeatures": {
+    //         "jsx": true
+    //     }
+    // },
     "rules": {
         "arrow-body-style": 0,
         "operator-assignment": 0,
