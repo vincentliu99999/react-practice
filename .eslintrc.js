@@ -1,10 +1,19 @@
+/* .eslintrc.js */
+
 module.exports = {
     "env": {
         "browser": true,
         "commonjs": true,
         "es6": true
     },
-    "extends": "airbnb", // 使用 eslint-config-airbnb
+    "plugins": [
+      "react"
+  ],
+    "extends": [
+      "react-app",
+      "airbnb",
+      "plugin:react/recommended"
+    ], // 使用 eslint-config-airbnb
     "parser": "babel-eslint", // 增强语法识别能力
     "parserOptions": {
         "ecmaVersion": 6,
@@ -85,3 +94,14 @@ module.exports = {
         "react/prop-types": 0,
     }
 };
+
+// module.exports = {
+//   "extends": "airbnb",
+//   "plugins": [
+//       "react"
+//   ],
+//   "parser": "babel-eslint",
+//   "rules": {
+//     "strict": 0,
+//   },
+// };
