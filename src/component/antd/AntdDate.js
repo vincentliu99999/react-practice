@@ -84,7 +84,7 @@ dateString: ${dateString}`);
         </Card>
         <Divider orientation="left">testDate</Divider>
         <Input placeholder="date to parse" value={this.state.testDate} onChange={this.handleTestDateChange} />
-        <Card style={{ width: 300 }}>
+        <Card style={{ width: 400 }}>
           <p>this.state.testDate: {this.state.testDate}</p>
           <p>moment.isDate(ISO 8601, RFC 2822): {`${moment(this.state.testDate).isValid()}`}</p>
           <p>locale: {moment.locale()}</p>
