@@ -40,7 +40,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/",
-    "docs": "jsdoc -c jsdoc.conf.json"
+    "docs": "jsdoc -c jsdoc.conf.json",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -52,6 +54,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-links": "^5.3.19",
+    "@storybook/addons": "^5.3.19",
+    "@storybook/preset-create-react-app": "^3.1.2",
+    "@storybook/react": "^5.3.19",
     "cz-conventional-changelog": "^3.1.0",
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
