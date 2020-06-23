@@ -21,7 +21,36 @@ class FormikForm extends Component {
     super(props);
     this.state = {
       isCellphoneEmpty: false,
+      init: {
+        name: 'init',
+        cellphone: '0988',
+        code: {
+          no: 123,
+          text: 'text'
+        },
+        date: moment(),
+        test: {
+          vincent: 'vincent',
+        }
+      }
     };
+  }
+
+  componentDidMount = () => {
+    console.log('componentDidMount - FormikForm');
+    setTimeout(() => {
+      this.setState({
+        init: {
+          name: 'init2',
+          cellphone: '0988',
+          code: {
+            no: 456,
+            text: 'text2'
+          },
+          date: moment(),
+        }
+      });
+    }, 5000);
   }
 
   handleNameChange = (e) => {
@@ -107,6 +136,7 @@ class FormikForm extends Component {
   render() {
     const {
       isCellphoneEmpty,
+      init
     } = this.state;
     const initVal = {
       name: '',
@@ -117,6 +147,10 @@ class FormikForm extends Component {
       },
       date: moment(),
     };
+
+    console.log(init);
+    console.log(initVal);
+
 
     let validateProfile;
 
@@ -164,11 +198,12 @@ class FormikForm extends Component {
 
     console.log(validateProfile);
 
+    console.log(this.state.init);
 
     return (
       <div>
         <Formik
-          initialValues={initVal}
+          initialValues={init}
           onSubmit={(values) => {
             setTimeout(() => {
               // eslint-disable-next-line no-alert
@@ -177,6 +212,7 @@ class FormikForm extends Component {
           }}
           validationSchema={validateProfile}
           render={this.renderForm}
+          enableReinitialize={true}
         />
       </div>
     );
