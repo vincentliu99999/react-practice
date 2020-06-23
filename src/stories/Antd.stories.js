@@ -1,29 +1,36 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import { message, Button } from 'antd';
 import Date from '../component/antd/AntdDate';
 import Modal from '../component/antd/AntdModal';
 
 const success = () => {
+  action('clicked');
   message.success('This is a success message');
 };
 
 const error = () => {
+  action('clicked');
   message.error('This is a error message');
 };
 
 const info = () => {
+  action('clicked');
   message.info('This is a normal message');
 };
 
 const warning = () => {
+  action('clicked');
   message.warning('This is a warning message');
 };
 
 const warn = () => {
+  action('clicked');
   message.warn('This is a warn message');
 };
 
 const loading = () => {
+  action('clicked');
   message.loading('This is a normal message');
 };
 
@@ -38,7 +45,14 @@ export const antdModal = () => <Modal />;
 
 export const antdMessage = () => (
   <>
-    <Button type="primary" shape="round" onClick={success}>
+    <Button
+      type="primary"
+      shape="round"
+      onClick={(e) => {
+        action('click')(e);
+        success();
+      }}
+    >
       Display success message
     </Button>
     <Button type="ghost" shape="round" onClick={error}>
