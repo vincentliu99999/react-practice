@@ -25,3 +25,12 @@ npm install esdoc-jsx-plugin esdoc-ecmascript-proposal-plugin esdoc-react-plugin
 npm i jsdoc better-docs
 touch jsdoc.conf.json
 ```
+
+## Stroybook
+
+- [Storybook for React](https://storybook.js.org/docs/guides/guide-react/)
+
+```shell
+npx -p @storybook/cli sb init --type react_scripts
+npm run storybook
+```
