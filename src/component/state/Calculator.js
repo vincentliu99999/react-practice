@@ -5,6 +5,10 @@ const scaleNames = {
   f: 'Fahrenheit'
 };
 
+/**
+ * 華氏轉攝氏溫度
+ * @param {Number} fahrenheit - 華氏溫度
+ */
 function toCelsius(fahrenheit) {
   return ((fahrenheit - 32) * 5) / 9;
 }

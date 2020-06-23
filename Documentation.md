@@ -18,3 +18,8 @@ npm install esdoc-jsx-plugin esdoc-ecmascript-proposal-plugin esdoc-react-plugin
 ```
 
 ## [JSDoc](http://usejsdoc.org/about-getting-started.html)
+
+```shell
+npm i jsdoc better-docs
+touch jsdoc.conf.json
+```

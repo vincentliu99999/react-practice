@@ -7,12 +7,14 @@
     "@hapi/joi": "^15.1.0",
     "antd": "^3.20.0",
     "axios": "^0.18.1",
+    "better-docs": "^2.0.1",
     "bootstrap": "^4.3.1",
     "esdoc-ecmascript-proposal-plugin": "^1.0.0",
     "esdoc-jsx-plugin": "^1.0.0",
     "esdoc-react-plugin": "^1.0.1",
     "eslint-config-airbnb": "^17.1.1",
     "formik": "^1.5.8",
+    "jsdoc": "^3.6.4",
     "moment": "^2.26.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
@@ -37,7 +39,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/"
+    "lint": "eslint src/",
+    "docs": "jsdoc -c jsdoc.conf.json"
   },
   "eslintConfig": {
     "extends": "react-app"

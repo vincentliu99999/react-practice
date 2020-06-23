@@ -33,6 +33,9 @@ import AntdModal from './component/antd/AntdModal';
 import AntdDate from './component/antd/AntdDate';
 import * as serviceWorker from './serviceWorker';
 
+/**
+ * About
+ */
 const About = () => (
   <div>
     <h2>About</h2>
@@ -40,6 +43,16 @@ const About = () => (
   </div>
 );
 
+/**
+ * return full name of the user
+ * @param   {string} firstName  First Name of the User
+ * @param   {string} lastName   Last Name of the User
+ * @return  {string}            Fullname of the user
+*/
+/**
+ * list item
+ * @param {Object} props
+ */
 function ListItem(props) {
   // Correct! There is no need to specify the key here:
   return <li>{props.value}</li>;
