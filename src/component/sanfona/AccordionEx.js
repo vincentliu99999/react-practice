@@ -21,9 +21,10 @@ class AccordionEx extends Component {
         allowMultiple="true"
         onChange={obj => this.onAccordionChange(obj)}
       >
-        {items.map((item) => {
+        {items.map((item, index) => {
           return (
             <AccordionItem
+              key={index}
               title={`Item ${item}`}
               expanded={item === 1}
               onExpand={obj => this.onAccordionItemExpended(obj)}

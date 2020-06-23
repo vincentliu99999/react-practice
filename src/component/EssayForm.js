@@ -24,7 +24,7 @@ class EssayForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-              Essay:
+          Essay:
           <textarea value={this.state.value} onChange={this.handleChange} />
         </label>
         <input type="submit" value="Submit" />

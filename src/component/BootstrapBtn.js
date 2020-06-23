@@ -90,7 +90,7 @@ class BootstrapBtn extends Component {
           <h4> React Bootstrap Buttons </h4>
           <ButtonToolbar>
             <Button> Default </Button>
-            <Button bsStyle="primary"> Primary </Button>;
+            <Button bsStyle="primary"> Primary </Button>
             <Button bsStyle="success"> Success </Button>
             <Button bsStyle="info"> Info </Button>
             <Button bsStyle="warning"> Warning </Button>

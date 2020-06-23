@@ -22,7 +22,7 @@ class FlavorForm extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-              Pick your favorite flavor:
+          Pick your favorite flavor:
           <select value={this.state.value} onChange={this.handleChange}>
             <option value="grapefruit">Grapefruit</option>
             <option value="lime">Lime</option>
