@@ -33,4 +33,9 @@ touch jsdoc.conf.json
 ```shell
 npx -p @storybook/cli sb init --type react_scripts
 npm run storybook
+
+npm i -D @storybook/react
+rm -rf node_modules
+npm i
+rnpm run build-storybook
 ```
