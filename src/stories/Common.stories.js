@@ -5,6 +5,7 @@ import {
 import FilterableProductTable from '../components/common/FilterableProductTable';
 import AlarmClockControl from '../components/common/AlarmClockControl';
 import Axios from '../components/common/Axios';
+import BootstrapBtn from '../components/common/BootstrapBtn';
 
 export default {
   title: 'Common',
@@ -43,4 +44,8 @@ export const AlarmClockControlUI = () => {
 
 export const AxiosUI = () => {
   return <Axios />;
+};
+
+export const BootstrapBtnUI = () => {
+  return <BootstrapBtn />;
 };
