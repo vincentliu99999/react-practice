@@ -1,13 +1,12 @@
 import React from 'react';
 import {
-  withKnobs, text, boolean, number,
+  withKnobs, text, boolean, number, color,
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Storybook Knobs',
-  decorators: [withKnobs]
+  title: 'Knobs',
+  decorators: [withKnobs] // add knobs support
 };
-// Add the `withKnobs` decorator to add knobs support to your stories.
 // You can also configure `withKnobs` as a global decorator.
 
 // boolean, text
@@ -17,7 +16,7 @@ export const withAButton = () => (
   </button>
 );
 
-// text, number
+// text, number, color
 export const asDynamicVariables = () => {
   const name = text('Name', 'James');
   const options = {
@@ -29,5 +28,10 @@ export const asDynamicVariables = () => {
   const age = number('Age', 35, options);
   const content = `I am ${name} and I'm ${age} years old.`;
 
-  return <div>{content}</div>;
+  const backgroundColor = color('Color', '#ff00ff');
+  const style = {
+    'background-color': backgroundColor,
+  };
+
+  return <div style={style}>{content}</div>;
 };
