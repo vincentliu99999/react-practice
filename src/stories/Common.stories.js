@@ -3,6 +3,7 @@ import {
   withKnobs, array
 } from '@storybook/addon-knobs';
 import FilterableProductTable from '../components/common/FilterableProductTable';
+import AlarmClockControl from '../components/common/AlarmClockControl';
 
 export default {
   title: 'Common',
@@ -30,7 +31,11 @@ const products = [
   }
 ];
 
-export const ProductTable = () => {
+export const FilterableProductTableUI = () => {
   const value = array('value', products);
   return <FilterableProductTable products={value} />;
+};
+
+export const AlarmClockControlUI = () => {
+  return <AlarmClockControl />;
 };
