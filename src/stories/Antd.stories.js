@@ -1,8 +1,8 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import { message, Button } from 'antd';
-import Date from '../component/antd/AntdDate';
-import Modal from '../component/antd/AntdModal';
+import Date from '../components/antd/AntdDate';
+import Modal from '../components/antd/AntdModal';
 
 const success = () => {
   action('clicked');

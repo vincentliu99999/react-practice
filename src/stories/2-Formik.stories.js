@@ -1,6 +1,6 @@
 import React from 'react';
-import Form from '../component/formik/Form';
-import Basic from '../component/formik/Basic';
+import Form from '../components/formik/Form';
+import Basic from '../components/formik/Basic';
 import 'antd/dist/antd.css';
 
 export default {
