@@ -1,47 +1,26 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
+import {
+  withKnobs, object
+} from '@storybook/addon-knobs';
 import { message, Button } from 'antd';
 import Date from '../components/antd/AntdDate';
 import Modal from '../components/antd/AntdModal';
 
-const success = () => {
-  action('clicked');
-  message.success('This is a success message');
-};
-
-const error = () => {
-  action('clicked');
-  message.error('This is a error message');
-};
-
-const info = () => {
-  action('clicked');
-  message.info('This is a normal message');
-};
-
-const warning = () => {
-  action('clicked');
-  message.warning('This is a warning message');
-};
-
-const warn = () => {
-  action('clicked');
-  message.warn('This is a warn message');
-};
-
-const loading = () => {
-  action('clicked');
-  message.loading('This is a normal message');
-};
-
 export default {
   component: Date,
   title: 'Ant Design',
+  decorators: [withKnobs]
 };
 
 export const antdDate = () => <Date />;
 
-export const antdModal = () => <Modal />;
+const defaultValue = {
+  something: 'red',
+};
+const value = object('something', defaultValue);
+
+export const antdModal = () => <Modal {...value} />;
 
 export const antdMessage = () => (
   <>
@@ -72,3 +51,33 @@ export const antdMessage = () => (
     </Button>
   </>
 );
+
+const success = () => {
+  action('clicked');
+  message.success('This is a success message');
+};
+
+const error = () => {
+  action('clicked');
+  message.error('This is a error message');
+};
+
+const info = () => {
+  action('clicked');
+  message.info('This is a normal message');
+};
+
+const warning = () => {
+  action('clicked');
+  message.warning('This is a warning message');
+};
+
+const warn = () => {
+  action('clicked');
+  message.warn('This is a warn message');
+};
+
+const loading = () => {
+  action('clicked');
+  message.loading('This is a normal message');
+};
