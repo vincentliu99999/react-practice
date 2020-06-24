@@ -43,7 +43,9 @@
     "docs": "jsdoc -c jsdoc.conf.json",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -65,7 +67,9 @@
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint-plugin-react": "^7.20.0",
-    "gh-pages": "^2.1.0"
+    "gh-pages": "^2.1.0",
+    "react-styleguidist": "^11.0.8",
+    "webpack": "^4.43.0"
   },
   "config": {
     "commitizen": {

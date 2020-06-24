@@ -28,6 +28,15 @@ touch jsdoc.conf.json
 jsdoc -r ./src/ -d ./docs
 ```
 
+## [Styleguidist](https://react-styleguidist.js.org/docs/getting-started)
+
+<https://github.com/styleguidist/react-styleguidist>
+
+```shell
+npm install --save-dev webpack
+npm install --save-dev react-styleguidist
+```
+
 ## Stroybook
 
 - [Storybook for React](https://storybook.js.org/docs/guides/guide-react/)
