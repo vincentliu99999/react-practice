@@ -67,9 +67,7 @@
     "esdoc": "^1.1.0",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint-plugin-react": "^7.20.0",
-    "gh-pages": "^2.1.0",
-    "react-styleguidist": "^11.0.8",
-    "webpack": "^4.43.0"
+    "gh-pages": "^2.1.0"
   },
   "config": {
     "commitizen": {

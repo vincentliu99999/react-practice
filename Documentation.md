@@ -48,5 +48,5 @@ npm run storybook
 npm i -D @storybook/react
 rm -rf node_modules
 npm i
-rnpm run build-storybook
+npm run build-storybook
 ```
