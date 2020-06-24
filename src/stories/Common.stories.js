@@ -4,6 +4,7 @@ import {
 } from '@storybook/addon-knobs';
 import FilterableProductTable from '../components/common/FilterableProductTable';
 import AlarmClockControl from '../components/common/AlarmClockControl';
+import Axios from '../components/common/Axios';
 
 export default {
   title: 'Common',
@@ -38,4 +39,8 @@ export const FilterableProductTableUI = () => {
 
 export const AlarmClockControlUI = () => {
   return <AlarmClockControl />;
+};
+
+export const AxiosUI = () => {
+  return <Axios />;
 };
