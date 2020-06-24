@@ -24,6 +24,8 @@ npm install esdoc-jsx-plugin esdoc-ecmascript-proposal-plugin esdoc-react-plugin
 ```shell
 npm i jsdoc better-docs
 touch jsdoc.conf.json
+
+jsdoc -r ./src/ -d ./docs
 ```
 
 ## Stroybook
