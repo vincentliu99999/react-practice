@@ -1,8 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import {
-  withKnobs, object
-} from '@storybook/addon-knobs';
+import { object } from '@storybook/addon-knobs';
 import { message, Button } from 'antd';
 import Date from '../components/antd/AntdDate';
 import Modal from '../components/antd/AntdModal';
@@ -10,7 +8,6 @@ import Modal from '../components/antd/AntdModal';
 export default {
   component: Date,
   title: 'Ant Design',
-  decorators: [withKnobs]
 };
 
 export const antdDate = () => <Date />;

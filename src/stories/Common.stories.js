@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  withKnobs, array, text, number
+  array, text, number
 } from '@storybook/addon-knobs';
 import AlarmClockControl from '../components/common/AlarmClockControl';
 import Axios from '../components/common/Axios';
@@ -21,7 +21,6 @@ import Calculator from '../components/state/Calculator';
 
 export default {
   title: 'Common',
-  decorators: [withKnobs]
 };
 
 export const AlarmClockControlUI = () => {
