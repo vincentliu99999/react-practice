@@ -5,8 +5,8 @@ class HelloTo extends React.Component {
     console.log(props);
     super(props);
     console.log(this.props);
-    console.log('url:' + props.match.url);
-    console.log(this.props.location.state);
+    // console.log('url:' + props.match.url);
+    // console.log(this.props.location.state);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
       date: new Date(),
