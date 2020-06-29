@@ -50,3 +50,7 @@ rm -rf node_modules
 npm i
 npm run build-storybook
 ```
+
+### Component Story Format (CSF)
+
+5.2 開始，每個 story 只要提供一個 **default export** 以及一個以上的 **named exports** 即可，比起 [storiesOf API](https://storybook.js.org/docs/formats/storiesof-api/) 簡單許多
