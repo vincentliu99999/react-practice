@@ -17,6 +17,7 @@ import HelloTo from '../components/common/HelloTo';
 import PropType from '../components/common/PropType';
 import StateDiff from '../components/common/StateDiff';
 import Toggle from '../components/common/Toggle';
+import Calculator from '../components/state/Calculator';
 
 export default {
   title: 'Common',
@@ -114,4 +115,8 @@ export const StateDiffUI = () => {
 
 export const ToggleUI = () => {
   return <Toggle />;
+};
+
+export const CalculatorUI = () => {
+  return <Calculator />;
 };
