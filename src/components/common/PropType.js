@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * PropType component
+ */
 class PropType extends Component {
   render() {
     return (
@@ -18,6 +21,12 @@ class PropType extends Component {
     );
   }
 }
+
+PropType.defaultProps = {
+  name: 'Vincent',
+  age: 18,
+  gender: 'male',
+};
 
 PropType.propTypes = {
   name: PropTypes.string,
