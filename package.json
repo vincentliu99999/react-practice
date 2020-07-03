@@ -42,7 +42,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/",
     "docs": "jsdoc -c jsdoc.conf.json",
-    "storybook": "start-storybook -p 9009 -s public",
+    "storybook": "start-storybook -p 9099 -s public",
     "build-storybook": "build-storybook -s public",
     "deploy-storybook": "storybook-to-ghpages",
     "styleguide": "styleguidist server",
