@@ -4,7 +4,7 @@ import {
 } from '@storybook/addon-knobs';
 
 export default {
-  title: 'Knobs',
+  title: 'Sample/Knobs',
   // decorators: [withKnobs] // add knobs support
 };
 // You can also configure `withKnobs` as a global decorator.
