@@ -13,7 +13,7 @@ import markdown from './Antd.md';
 
 export default {
   component: Date,
-  title: 'Design System/Ant Design',
+  title: 'Design System|Ant Design',
   parameters: { notes: markdown },
 };
 
