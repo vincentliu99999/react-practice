@@ -18,7 +18,7 @@ import Toggle from '../components/common/Toggle';
 import Calculator from '../components/state/Calculator';
 
 export default {
-  title: 'CommonEX',
+  title: 'Component/CommonEX',
   // component: PropType,
 };
 

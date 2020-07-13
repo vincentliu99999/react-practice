@@ -5,7 +5,7 @@ import 'antd/dist/antd.css';
 
 export default {
   component: Basic,
-  title: 'Formik',
+  title: 'Form/Formik',
 };
 
 export const FormikBasic = () => <Basic />;
