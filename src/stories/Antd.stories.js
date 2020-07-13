@@ -9,10 +9,12 @@ import {
 import { message, Button } from 'antd';
 import Date from '../components/antd/AntdDate';
 import Modal from '../components/antd/AntdModal';
+import markdown from './Antd.md';
 
 export default {
   component: Date,
   title: 'Ant Design',
+  parameters: { notes: markdown },
 };
 
 export const antdDate = () => <Date />;
