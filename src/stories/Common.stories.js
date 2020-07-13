@@ -18,8 +18,8 @@ import Toggle from '../components/common/Toggle';
 import Calculator from '../components/state/Calculator';
 
 export default {
-  title: 'Component/CommonEX',
-  // component: PropType,
+  title: 'Practice|Component/CommonEX',
+  component: HelloTo,
 };
 
 export const AlarmClockControlUI = () => {
