@@ -7,7 +7,12 @@ module.exports = {
     '@storybook/addon-knobs/register',
     '@storybook/addon-viewport/register',
     '@storybook/addon-storysource',
-    '@storybook/addon-docs',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+      },
+    },
     '@storybook/addon-notes/register',
   ],
 };
