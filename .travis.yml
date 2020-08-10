@@ -18,6 +18,8 @@ before_script:
 
 script:
   - ls -al
+  - npm run test
+  - npm run lint
 
 after_script:
   - echo after_script
