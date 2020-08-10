@@ -7,10 +7,14 @@ node_js:
   - 12
   # - 11
   # - 10
-cache: npm
+cache:
+  npm: true
+  directories:
+    - $HOME/vincent
 
 before_install:
   - echo before_install
+  # - mkdir -p $HOME/vincent
 
 install:
   - npm install
@@ -22,6 +26,25 @@ script:
   - ls -al
   - npm run test
   - npm run lint
+
+jobs:
+  include:
+    - stage: setup files
+      script:
+        - echo $TRAVIS_BUILD_NUMBER
+        - echo oneone | tee > $HOME/vincent/one
+    - stage: setup files
+      script:
+        - echo $TRAVIS_BUILD_NUMBER
+        - echo twotwo | tee > $HOME/vincent/two
+    - stage: use shared files
+      script:
+        - echo $TRAVIS_BUILD_NUMBER
+        - ls -al
+        - ls -al $HOME/vincent
+        - tail -n +1 $HOME/vincent/*
+      after_success:
+          - echo job after_success
 
 after_script:
   - echo after_script
