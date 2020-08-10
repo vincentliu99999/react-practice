@@ -7,8 +7,20 @@ node_js:
   - 12
   - 11
   - 10
+before_install:
+  - echo before_install
 
 install:
   - npm install
+
+before_script:
+  - echo before_script
+
 script:
   - ls -al
+
+after_script:
+  - echo after_script
+  
+after_success:
+  - echo after_success
