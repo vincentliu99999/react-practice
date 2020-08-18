@@ -12,7 +12,8 @@ module.exports = {
     "extends": [
       "react-app",
       "airbnb",
-      "plugin:react/recommended"
+      "plugin:react/recommended",
+      "plugin:react-hooks/recommended"
     ], // 使用 eslint-config-airbnb
     // "parser": "babel-eslint", // 增强语法识别能力
     // "parserOptions": {
