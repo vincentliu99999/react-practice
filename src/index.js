@@ -31,6 +31,7 @@ import FormikBasic from './components/formik/Basic';
 import FormikForm from './components/formik/Form';
 import AntdModal from './components/antd/AntdModal';
 import AntdDate from './components/antd/AntdDate';
+import Example from './components/hook/Example';
 import * as serviceWorker from './serviceWorker';
 /** @module index */
 /** @namespace */
@@ -214,6 +215,7 @@ ReactDOM.render(
           <li><Link to="/react-practice/redux-form">Redux Form</Link></li>
           <li><Link to="/react-practice/antd-modal">Antd Modal</Link></li>
           <li><Link to="/react-practice/antd-date">Antd Date</Link></li>
+          <li><Link to="/react-practice/hook/example">Hook - Example</Link></li>
         </ul>
         <hr />
         <Route exact strict path="/react-practice/" component={App} />
@@ -254,6 +256,7 @@ ReactDOM.render(
           // component={AntdModal}
           render={props => <AntdDate something="something" {...props} />}
         />
+        <Route path="/react-practice/hook/example" component={Example} />
         <NumberList numbers={numbers} />
       </div>
     </Router>
