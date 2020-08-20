@@ -26,7 +26,8 @@ install:
 
 before_script:
 - echo before_script
-- npm run lint:dry
+- chmod +x ./scripts/lint.sh
+- ./scripts/lint.sh
 
 script:
 - ls -al
