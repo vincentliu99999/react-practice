@@ -41,6 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/",
+    "lint:dry": "eslint --fix-dry-run src/",
     "docs": "jsdoc -c jsdoc.conf.json",
     "storybook": "start-storybook -p 9099 -s public",
     "build-storybook": "build-storybook -s public",
