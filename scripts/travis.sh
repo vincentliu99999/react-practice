@@ -1,4 +1,5 @@
 #!/bin/bash
+set -ev
 
 export TRAVIS_DEBUG_MODE="true"
 

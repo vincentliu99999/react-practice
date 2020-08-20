@@ -1,40 +1,68 @@
 language: node_js
-node_js:
+# node_js:
   # - node
   # - lts/*
   # - 14
   # - 13
-  - 12
+  # - 12
   # - 11
   # - 10
-cache:
-  npm: true
+# cache:
+#   npm: true
   # directories:
   #   - $HOME/vincent
 
-before_install:
-- echo before_install
-# - mkdir -p $HOME/vincent
-- chmod +x ./scripts/env.sh
-- chmod +x ./scripts/travis.sh
-- ./scripts/env.sh ${TRAVIS_BRANCH}
-- ./scripts/travis.sh
+# before_install:
+# - echo before_install
+# # - mkdir -p $HOME/vincent
+# - chmod +x ./scripts/env.sh
+# - chmod +x ./scripts/travis.sh
+# - ./scripts/env.sh ${TRAVIS_BRANCH}
+# - ./scripts/travis.sh
 
-install:
-- echo install
-- npm install
+# install:
+# - echo install
+# - npm install
 
-before_script:
-- echo before_script
-- chmod +x ./scripts/lint.sh
-- ./scripts/lint.sh
+# before_script:
+# - echo before_script
+# # - chmod +x ./scripts/lint.sh
+# # - ./scripts/lint.sh
 
-script:
-- ls -al
-# - npm run test
-# - npm run lint
-- ls -al
-- cat parameters.json
+# script:
+# - ls -al
+# # - npm run test
+# # - npm run lint
+# - ls -al
+# - cat parameters.json
+
+jobs: 
+  include:
+  # - stage: test
+  #   scripts:
+  #     - npm run test
+  - name: Lint job
+    node_js: '12'
+    scripts: npm run lint:dry || exit 0
+  # - name: Audit job
+  #   node_js: '12'
+  #   scripts: npm audit --audit-level=high
+  - name: depcheck job
+    node_js: '12'
+    scripts: 
+      - npm install -g depcheck
+      - depcheck
+  - name: outdated job
+    node_js: '12'
+    scripts: npm outdated
+  - name: build job
+    node_js: '12'
+    scripts: 
+      - npm run build
+      - ls -al
+
+# before_install:
+#   - npm prune --no-fund
 
 # jobs:
 #   include:
@@ -55,8 +83,8 @@ script:
 #       after_success:
 #           - echo job after_success
 
-after_script:
-  - echo after_script
+# after_script:
+#   - echo after_script
   
-after_success:
-  - echo after_success
+# after_success:
+#   - echo after_success
