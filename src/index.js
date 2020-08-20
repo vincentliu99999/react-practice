@@ -32,6 +32,7 @@ import FormikForm from './components/formik/Form';
 import AntdModal from './components/antd/AntdModal';
 import AntdDate from './components/antd/AntdDate';
 import Example from './components/hook/Example';
+import Counter from './components/counter/Counter';
 import * as serviceWorker from './serviceWorker';
 /** @module index */
 /** @namespace */
@@ -216,6 +217,7 @@ ReactDOM.render(
           <li><Link to="/react-practice/antd-modal">Antd Modal</Link></li>
           <li><Link to="/react-practice/antd-date">Antd Date</Link></li>
           <li><Link to="/react-practice/hook/example">Hook - Example</Link></li>
+          <li><Link to="/react-practice/redux/counter">Redux - Counter</Link></li>
         </ul>
         <hr />
         <Route exact strict path="/react-practice/" component={App} />
@@ -257,6 +259,7 @@ ReactDOM.render(
           render={props => <AntdDate something="something" {...props} />}
         />
         <Route path="/react-practice/hook/example" component={Example} />
+        <Route path="/react-practice/redux/counter" component={Counter} />
         <NumberList numbers={numbers} />
       </div>
     </Router>
