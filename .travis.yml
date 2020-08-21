@@ -24,6 +24,7 @@ script: # main phase
 - zip -r -q src.zip src public
 - zip -r -q doc.zip *.md
 - mkdir upload
+- mv *.json upload/
 - mv *.zip upload/
 
 after_script:
