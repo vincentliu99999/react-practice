@@ -1,0 +1,36 @@
+language: node_js
+node_js:
+  # - node
+  # - lts/*
+  - 12
+
+cache:
+  npm: true
+
+before_install:
+- echo before_install
+- chmod +x ./scripts/env.sh
+- ./scripts/env.sh ${TRAVIS_BRANCH}
+
+install: # main phase
+- echo install
+
+before_script:
+- echo before_script
+
+script: # main phase
+- ls -al
+# - npm run test
+# - npm run lint
+- cat parameters.json | xargs echo -e
+- echo "$(cat parameters.json)"
+- printenv
+  
+after_success:
+  - echo after_success
+
+after_failure:
+  - echo after_failure
+
+after_script:
+  - echo after_script

@@ -1,30 +1,13 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import {
-  object, boolean,
-  text,
-  select,
-  radios,
-} from '@storybook/addon-knobs';
 import { message, Button } from 'antd';
-import Date from '../components/antd/AntdDate';
-import Modal from '../components/antd/AntdModal';
 import markdown from './Antd.md';
 
 export default {
-  component: Date,
-  title: 'Design System|Ant Design',
+  component: antdMessage,
+  title: 'Design System|Ant Design/Message',
   parameters: { notes: markdown },
 };
-
-export const antdDate = () => <Date />;
-
-const defaultValue = {
-  something: 'red',
-};
-const value = object('something', defaultValue);
-
-export const antdModal = () => <Modal {...value} />;
 
 export const antdMessage = () => (
   <>
