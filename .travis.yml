@@ -22,20 +22,8 @@ script: # main phase
 - ls -al
 # - npm run test
 # - npm run lint
-- if [ ${TRAVIS_BRANCH} == "master" ]; then
-    echo copy lab parameters;
-    cp ./parameters-dev.json ./parameters.json;
-  elif [ ${TRAVIS_BRANCH} == "stg" ]; then
-    echo copy staging parameters
-    cp ./parameters-stg.json ./parameters.json;
-  elif [ ${TRAVIS_BRANCH} == "prod" ]; then
-    echo copy production parameters
-    cp ./parameters-prod.json ./parameters.json;
-  else
-    echo do nothing;
-  fi
-- ls -al
-- cat parameters.json
+- cat parameters.json | xargs echo -e
+- echo "$(cat parameters.json)"
 - printenv
   
 after_success:
