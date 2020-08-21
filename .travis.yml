@@ -23,6 +23,8 @@ script: # main phase
 # - npm run build
 - zip -r -q src.zip src public
 - zip -r -q doc.zip *.md
+- mkdir upload
+- mv *.zip upload/
 
 after_script:
 - ls -al
@@ -32,3 +34,15 @@ after_success:
 
 after_failure:
 - echo after_failure
+
+deploy:
+  provider: s3
+  access_key_id: "$AWS_ACCESS_KEY_ID"
+  secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+  skip_cleanup: true
+  bucket: $S3_BUCKET_NAME
+  local_dir: upload
+  region: us-east-1
+  on:
+    branch:
+      travis
