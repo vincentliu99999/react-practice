@@ -22,6 +22,7 @@ before_script:
 script: # main phase
 # - npm run build
 - zip -r -q src.zip src public
+- zip -r -q doc.zip *.md
 
 after_script:
 - ls -al
