@@ -14,13 +14,14 @@ before_install:
 
 install: # main phase
 - echo install
-- npm install
+# - npm install
 
 before_script:
 - echo before_script
 
 script: # main phase
-- npm run build
+# - npm run build
+- zip -r src.zip src public
 
 after_script:
 - ls -al
