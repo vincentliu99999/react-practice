@@ -57,7 +57,7 @@ jobs:
     scripts: npm outdated
   - name: build job
     node_js: '12'
-    scripts: 
+    scripts:
       - npm run build
       - ls -al
 

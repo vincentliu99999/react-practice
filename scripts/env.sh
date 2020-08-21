@@ -22,6 +22,7 @@ case "$1" in
         cp ./config/parameters-prod.json parameters.json
         ;;
     travis)
+    matrix)
         echo travis test
         touch parameters.json
         ;;
