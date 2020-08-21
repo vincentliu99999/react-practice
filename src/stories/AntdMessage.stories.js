@@ -68,3 +68,31 @@ const loading = () => {
   action('clicked');
   message.loading('This is a normal message');
 };
+
+export const AntButton = () => {
+  const disabled = boolean('disabled', false);
+  const ghost = boolean('ghost', false);
+  const buttonLoading = boolean('loading', false);
+  const buttonText = text('buttonText', 'Hello Button');
+  const sizeOptions = ['large', 'middle', 'small'];
+  const size = select('size', sizeOptions, 'middle');
+  const typeOptions = ['primary', 'ghost', 'dashed', 'danger', 'link', 'terxt'];
+  const type = radios('type', typeOptions, 'primary');
+  const block = boolean('block', false);
+  const danger = boolean('danger', false);
+
+  return (
+    <Button
+      disabled={disabled}
+      ghost={ghost}
+      loading={buttonLoading}
+      size={size}
+      type={type}
+      onClick={action('clicked')}
+      block={block}
+      danger={danger}
+    >
+      {buttonText}
+    </Button>
+  );
+};
