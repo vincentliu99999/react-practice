@@ -2,25 +2,18 @@ language: node_js
 node_js:
   # - node
   # - lts/*
-  # - 14
-  # - 13
   - 12
-  # - 11
-  # - 10
+
 cache:
   npm: true
-  directories:
-    - $HOME/vincent
 
 before_install:
 - echo before_install
-# - mkdir -p $HOME/vincent
 - chmod +x ./scripts/env.sh
 - ./scripts/env.sh ${TRAVIS_BRANCH}
 
 install:
 - echo install
-# - npm install
 
 before_script:
 - echo before_script
@@ -43,25 +36,7 @@ script:
   fi
 - ls -al
 - cat parameters.json
-
-# jobs:
-#   include:
-#     - stage: setup files
-#       script:
-#         - echo $TRAVIS_BUILD_NUMBER
-#         - echo oneone | tee > $HOME/vincent/one
-#     - stage: setup files
-#       script:
-#         - echo $TRAVIS_BUILD_NUMBER
-#         - echo twotwo | tee > $HOME/vincent/two
-#     - stage: use shared files
-#       script:
-#         - echo $TRAVIS_BUILD_NUMBER
-#         - ls -al
-#         - ls -al $HOME/vincent
-#         - tail -n +1 $HOME/vincent/*
-#       after_success:
-#           - echo job after_success
+- printenv
 
 after_script:
   - echo after_script
