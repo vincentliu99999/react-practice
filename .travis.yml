@@ -7,7 +7,7 @@ jobs:
   #     - npm run test
   - name: Lint job
     node_js: '12'
-    scripts: npm run lint:dry || exit 0
+    scripts: npm run lint:dry || true
   # - name: Audit job
   #   node_js: '12'
   #   scripts: npm audit --audit-level=high
@@ -15,10 +15,10 @@ jobs:
     node_js: '12'
     scripts: 
       - npm install -g depcheck
-      - depcheck
+      - depcheck || true
   - name: outdated job
     node_js: '12'
-    scripts: npm outdated
+    scripts: npm outdated || true
   - name: build job
     node_js: '12'
     scripts:
