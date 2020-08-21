@@ -24,3 +24,29 @@ jobs:
     scripts:
       - npm run build
       - ls -al
+  - name: upload job
+    node_js: '12'
+    scripts:
+      - zip -r -q src.zip src public
+      - zip -r -q doc.zip *.md
+      - mkdir upload
+      - mv *.json upload/
+      - mv *.zip upload/
+      - ls -al
+    after_script: ls -al
+    deploy:
+      provider: s3
+      access_key_id: "$AWS_ACCESS_KEY_ID"
+      secret_access_key: "$AWS_SECRET_ACCESS_KEY"
+      skip_cleanup: true
+      bucket: $S3_BUCKET_NAME
+      local_dir: upload
+      region: us-east-1
+      on:
+        all_branches: true
+        condition: $TRAVIS_BRANCH =~ ^(travis|matrix)$
+    after_deploy:
+    - md5sum $TRAVIS_BUILD_DIR/upload/src.zip
+    - echo "s3://$S3_BUCKET_NAME/src.zip"
+    - md5sum $TRAVIS_BUILD_DIR/upload/doc.zip
+    - echo "s3://$S3_BUCKET_NAME/doc.zip"
