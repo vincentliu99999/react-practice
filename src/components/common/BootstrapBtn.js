@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter, Link } from 'react-router-dom';
 import { Button, ButtonToolbar } from 'react-bootstrap';
 
 // preventing rendering
@@ -31,6 +32,7 @@ class BootstrapBtn extends Component {
   }
 
   render() {
+    console.log(this.props);
     const isLightOn = this.state.isLightOn;
     let lightButton;
 
@@ -69,23 +71,29 @@ class BootstrapBtn extends Component {
           <br />
           <h4> Theme React Bootstrap Circle Buttons </h4>
           <ButtonToolbar>
-            <Button bsStyle="btn btn-default btn-circle">
-              <i className="fa fa-check" />
+            <a href="/react-practice/error" target="_blank">new link</a>
+            <Link to='/react-practice/about'>
+              <Button>
+                    My button linked to react-router-dom
+              </Button>
+            </Link>
+            <Button bsStyle="btn btn-default btn-circle" onClick={() => this.props.history.push('/react-practice/error')}>
+              <i className="fa fa-check" />this.props.history.push
             </Button>
             <Button bsStyle="btn btn-primary btn-circle">
-              <i className="fa fa-list" />
+              <i className="fa fa-list" />2
             </Button>
             <Button bsStyle="btn btn-success btn-circle">
-              <i className="fa fa-link" />
+              <i className="fa fa-link" />3
             </Button>
             <Button bsStyle="btn btn-info btn-circle">
-              <i className="fa fa-check" />
+              <i className="fa fa-check" />4
             </Button>
             <Button bsStyle="btn btn-warning btn-circle">
-              <i className="fa fa-times" />
+              <i className="fa fa-times" />5
             </Button>
             <Button bsStyle="btn btn-danger btn-circle">
-              <i className="fa fa-heart" />
+              <i className="fa fa-heart" />6
             </Button>
           </ButtonToolbar>
           <br />
@@ -115,4 +123,4 @@ class BootstrapBtn extends Component {
   }
 }
 
-export default BootstrapBtn;
+export default withRouter(BootstrapBtn);
