@@ -157,3 +157,13 @@ That would permanently disable this preflight check in case you want to proceed 
 
 P.S. We know this message is long but please read the steps above :-) We hope you find them helpful!
 ```
+
+### "es2021" is unknown
+
+```log
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/.eslintrc.js:
+        Environment key "es2021" is unknown
+
+Error: /Users/vincent.liu/workspace/vincent/f2e/react-practice/.eslintrc.js:
+        Environment key "es2021" is unknown
+```
