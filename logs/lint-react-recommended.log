@@ -1,0 +1,76 @@
+
+> react-practice@0.1.0 lint /Users/vincent.liu/workspace/vincent/f2e/react-practice
+> eslint src/
+
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/antd/AntdModal.js
+  62:26  error  'something' is missing in props validation  react/prop-types
+  81:26  error  'something' is missing in props validation  react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/common/AlarmClockControl.js
+  56:25  error  'isAlarm' is missing in props validation  react/prop-types
+  65:42  error  'onClick' is missing in props validation  react/prop-types
+  66:14  error  'ring' is missing in props validation     react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/common/BootstrapBtn.js
+   7:14  error  'isLightOn' is missing in props validation     react/prop-types
+  80:84  error  'history' is missing in props validation       react/prop-types
+  80:92  error  'history.push' is missing in props validation  react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/common/ErrorBoundary.js
+  42:23  error  'children' is missing in props validation  react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/common/ErrorCounter.js
+  18:24  error  'action' is missing in props validation  react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/common/FilterableProductTable.js
+    6:33  error  'category' is missing in props validation            react/prop-types
+   19:32  error  'product' is missing in props validation             react/prop-types
+   20:26  error  'product.stocked' is missing in props validation     react/prop-types
+   21:17  error  'product.name' is missing in props validation        react/prop-types
+   24:20  error  'product.name' is missing in props validation        react/prop-types
+   31:22  error  'product.price' is missing in props validation       react/prop-types
+   39:35  error  'filterText' is missing in props validation          react/prop-types
+   40:36  error  'inStockOnly' is missing in props validation         react/prop-types
+   45:16  error  'products' is missing in props validation            react/prop-types
+   45:25  error  'products.forEach' is missing in props validation    react/prop-types
+   95:16  error  'onFilterTextChange' is missing in props validation  react/prop-types
+   99:16  error  'onInStockChange' is missing in props validation     react/prop-types
+  108:29  error  'filterText' is missing in props validation          react/prop-types
+  114:33  error  'inStockOnly' is missing in props validation         react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/common/HelloTo.js
+  26:3   error  componentWillMount is deprecated since React 16.9.0, use UNSAFE_componentWillMount instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillmount. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components                       react/no-deprecated
+  39:3   error  componentWillReceiveProps is deprecated since React 16.9.0, use UNSAFE_componentWillReceiveProps instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillreceiveprops. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components  react/no-deprecated
+  52:3   error  componentWillUpdate is deprecated since React 16.9.0, use UNSAFE_componentWillUpdate instead, see https://reactjs.org/docs/react-component.html#unsafe_componentwillupdate. Use https://github.com/reactjs/react-codemod#rename-unsafe-lifecycles to automatically update your components                    react/no-deprecated
+  75:32  error  'gender' is missing in props validation                                                                                                                                                                                                                                                                      react/prop-types
+  75:52  error  'name' is missing in props validation                                                                                                                                                                                                                                                                        react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/ReduxForm/FieldLevelValidationForm.js
+  31:5   error  'handleSubmit' is missing in props validation  react/prop-types
+  31:19  error  'pristine' is missing in props validation      react/prop-types
+  31:29  error  'reset' is missing in props validation         react/prop-types
+  31:36  error  'submitting' is missing in props validation    react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/ReduxForm/SimpleForm.js
+  15:5   error  'handleSubmit' is missing in props validation  react/prop-types
+  15:19  error  'pristine' is missing in props validation      react/prop-types
+  15:29  error  'reset' is missing in props validation         react/prop-types
+  15:36  error  'submitting' is missing in props validation    react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/components/state/Calculator.js
+  38:16  error  'onTemperatureChange' is missing in props validation  react/prop-types
+  42:36  error  'temperature' is missing in props validation          react/prop-types
+  43:30  error  'scale' is missing in props validation                react/prop-types
+  54:21  error  'celsius' is missing in props validation              react/prop-types
+  55:13  error  'celsius' is missing in props validation              react/prop-types
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/src/index.js
+   86:21  error  'value' is missing in props validation        react/prop-types
+   90:25  error  'numbers' is missing in props validation      react/prop-types
+   91:29  error  'numbers.map' is missing in props validation  react/prop-types
+  128:56  error  'color' is missing in props validation        react/prop-types
+  129:14  error  'children' is missing in props validation     react/prop-types
+
+✖ 47 problems (47 errors, 0 warnings)
+

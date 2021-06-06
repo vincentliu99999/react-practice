@@ -9,6 +9,7 @@
 
 ```shell
 npm run lint > ./logs/lint.log
+npm run lint > ./logs/lint-react-recommended.log
 ```
 
 ### log - install eslint
