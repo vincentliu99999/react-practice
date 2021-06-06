@@ -7,6 +7,10 @@
 
 ## log
 
+```shell
+npm run lint > ./logs/lint.log
+```
+
 ### log - install eslint
 
 `npm install eslint --save-dev`
