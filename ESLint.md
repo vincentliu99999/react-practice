@@ -168,3 +168,39 @@ P.S. We know this message is long but please read the steps above :-) We hope yo
 Error: /Users/vincent.liu/workspace/vincent/f2e/react-practice/.eslintrc.js:
         Environment key "es2021" is unknown
 ```
+
+### more than 1 items
+
+```log
+> react-practice@0.1.0 lint /Users/vincent.liu/workspace/vincent/f2e/react-practice
+> eslint src/
+
+/Users/vincent.liu/workspace/vincent/f2e/react-practice/node_modules/eslint-config-airbnb-base/rules/style.js:
+        Configuration for rule "padded-blocks" is invalid:
+        Value [{"blocks":"never","classes":"never","switches":"never"},{"allowSingleLineBlocks":true}] should NOT have more than 1 items.
+
+Referenced from: /Users/vincent.liu/workspace/vincent/f2e/react-practice/node_modules/eslint-config-airbnb-base/index.js
+Referenced from: /Users/vincent.liu/workspace/vincent/f2e/react-practice/node_modules/eslint-config-airbnb/index.js
+Referenced from: /Users/vincent.liu/workspace/vincent/f2e/react-practice/.eslintrc.js
+Error: /Users/vincent.liu/workspace/vincent/f2e/react-practice/node_modules/eslint-config-airbnb-base/rules/style.js:
+        Configuration for rule "padded-blocks" is invalid:
+        Value [{"blocks":"never","classes":"never","switches":"never"},{"allowSingleLineBlocks":true}] should NOT have more than 1 items.
+
+Referenced from: /Users/vincent.liu/workspace/vincent/f2e/react-practice/node_modules/eslint-config-airbnb-base/index.js
+Referenced from: /Users/vincent.liu/workspace/vincent/f2e/react-practice/node_modules/eslint-config-airbnb/index.js
+Referenced from: /Users/vincent.liu/workspace/vincent/f2e/react-practice/.eslintrc.js
+```
+
+### UNMET PEER DEPENDENCY
+
+npm ls eslint
+
+npx npm-install-peers
+
+```log
+react-practice@0.1.0 /Users/vincent.liu/workspace/vincent/f2e/react-practice
+└─┬ UNMET PEER DEPENDENCY react-scripts@2.1.3
+  └── eslint@5.6.0 
+
+npm ERR! peer dep missing: react-scripts@>=3.0.0, required by @storybook/preset-create-react-app@3.1.7
+```
